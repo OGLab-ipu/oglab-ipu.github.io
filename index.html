@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>小倉研究室｜岩手県立大学 ソフトウェア情報学部</title>
-<meta name="description" content="岩手県立大学ソフトウェア情報学部 社会システムデザインコース 小倉研究室の紹介．研究テーマ，先輩の研究，配属後の流れ，研究室配属についてまとめています．">
+<meta name="description" content="岩手県立大学ソフトウェア情報学部 社会システムデザインコース 小倉研究室の紹介．研究テーマ，先輩の研究，研究業績，配属後の流れ，研究室配属についてまとめています．">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -204,6 +204,21 @@ dialog::backdrop{background:rgba(0,0,0,.5)}
 .pubs p{font-size:.875rem;line-height:1.7}
 .close{min-height:44px;padding:0 16px}
 
+/* 研究業績 */
+.toggle .cnt{font-family:var(--mono);font-size:.875rem;padding:0 8px;border-radius:var(--r-full);background:var(--gray-50);color:var(--text)}
+.toggle[aria-pressed="true"] .cnt{background:var(--white);color:var(--primary)}
+.fy{font-size:1.25rem;line-height:1.5;margin:var(--sp-3) 0 var(--sp-1);padding-bottom:var(--sp-1);border-bottom:2px solid var(--text)}
+.fy:first-child{margin-top:0}
+.plist{list-style:none;margin:0;padding:0}
+.plist li{display:grid;grid-template-columns:6.5em minmax(0,1fr);gap:var(--sp-2);padding:12px 0;border-bottom:1px solid var(--gray-100)}
+.pside{display:flex;flex-direction:column;align-items:flex-start;gap:4px}
+.pdate{font-family:var(--mono);font-size:.875rem;color:var(--text-sub);line-height:1.7}
+.pbody{display:grid;gap:2px;min-width:0}
+.award{display:inline-flex;vertical-align:1px;margin-left:4px;align-items:center;padding:0 10px;border-radius:var(--r-full);border:1px solid var(--p);color:var(--p);font-weight:700;font-size:.875rem;line-height:1.7;background:var(--p-50)}
+.pt{font-weight:700;line-height:1.7}
+.pm{font-size:.875rem;color:var(--text-sub);line-height:1.7;overflow-wrap:anywhere}
+@media (max-width:767px){.plist li{grid-template-columns:1fr;gap:4px}.pside{flex-direction:row;align-items:center;gap:var(--sp-1)}}
+
 /* 配属後の流れ */
 .tline{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;position:relative;margin:0;padding:0;list-style:none}
 .tline::before{content:"";position:absolute;left:20px;right:20px;top:19px;border-top:2px solid var(--border)}
@@ -316,6 +331,7 @@ footer .wrap{padding-block:var(--sp-3) var(--sp-5);font-size:.875rem;color:var(-
       <li><a href="#approach">考え方</a></li>
       <li><a href="#themes">研究テーマ</a></li>
       <li><a href="#archive">先輩の研究</a></li>
+      <li><a href="#pubs">研究業績</a></li>
       <li><a href="#seminar">配属後の流れ</a></li>
       <li><a href="#life">研究室の様子</a></li>
       <li><a class="cta" href="#apply">配属について</a></li>
@@ -376,7 +392,17 @@ footer .wrap{padding-block:var(--sp-3) var(--sp-5);font-size:.875rem;color:var(-
   </div>
 </section>
 
-<section id="seminar">
+<section id="pubs">
+  <div class="wrap">
+    <div class="head head-s"><div class="head-t"><span class="en">PUBLICATIONS</span><h2>研究業績</h2><p>2020年度以降に研究室から発表した論文・学会発表です．</p></div><img class="stk stk-head" src="img/shounin.webp" width="260" height="296" alt="" decoding="async"></div>
+    <div class="bar" id="pbar" role="group" aria-label="種類で絞り込む"></div>
+    <div id="plist"></div>
+    <div class="morewrap" id="pmore"></div>
+    <p class="fine" id="rmnote"></p>
+  </div>
+</section>
+
+<section class="alt" id="seminar">
   <div class="wrap">
     <div class="head head-s"><div class="head-t"><span class="en">SEMINAR</span><h2>配属後の流れ</h2></div><img class="stk stk-head" src="img/remind.webp" width="253" height="294" alt="" decoding="async"></div>
     <ol class="tline">
@@ -400,7 +426,7 @@ footer .wrap{padding-block:var(--sp-3) var(--sp-5);font-size:.875rem;color:var(-
   </div>
 </section>
 
-<section class="alt" id="policy">
+<section id="policy">
   <div class="wrap">
     <div class="head head-s"><div class="head-t"><span class="en">POLICY</span><h2>研究室の方針</h2></div><img class="stk stk-head" src="img/uun.webp" width="244" height="259" alt="" decoding="async"></div>
     <ul class="pgrid">
@@ -412,7 +438,7 @@ footer .wrap{padding-block:var(--sp-3) var(--sp-5);font-size:.875rem;color:var(-
   </div>
 </section>
 
-<section id="life">
+<section class="alt" id="life">
   <div class="wrap">
     <div class="head head-s"><div class="head-t"><span class="en">LIFE</span><h2>研究室の様子</h2><p>座席はフリー制で，普段は静かです．模様替えは大歓迎．</p></div><img class="stk stk-head" src="img/oyasumi.webp" width="269" height="286" alt="" decoding="async"></div>
     <div class="life">
@@ -433,7 +459,7 @@ footer .wrap{padding-block:var(--sp-3) var(--sp-5);font-size:.875rem;color:var(-
   </div>
 </section>
 
-<section class="alt" id="apply">
+<section id="apply">
   <div class="wrap">
     <div class="head"><span class="en">JOIN US</span><h2>研究室配属について</h2></div>
     <div class="cta-panel">
@@ -461,7 +487,7 @@ footer .wrap{padding-block:var(--sp-3) var(--sp-5);font-size:.875rem;color:var(-
   </div>
 </section>
 
-<section id="teacher">
+<section class="alt" id="teacher">
   <div class="wrap" style="padding-block:var(--sp-5)">
     <div class="teacher"><img class="avatar" src="img/avatar.webp" width="227" height="240" alt="小倉加奈代のイラスト（愛猫を抱いている）"><b>小倉 加奈代</b><span>講師</span><span>担当：応用心理学（2年），コミュニケーション論（3年）ほか</span><span id="rmlink"></span></div>
   </div>
@@ -620,6 +646,8 @@ const TEAMS = [
 ];
 
 
+const PUBS=[{"y": "2026-09", "cat": "domestic", "t": "生成AIを用いたリフレーミング支援アプリによる否定的出来事の捉え直し促進の予備的検討", "a": "小倉加奈代, 鈴木琉介", "v": "ヒューマンインタフェースシンポジウム2026論文集, 2026", "u": "", "fy": 2026}, {"y": "2026", "cat": "domestic", "t": "LikinGap：ブランド情報による主観評価と生理反応の並列表示による食品体験システム", "a": "佐竹 愁人", "v": "ヒューマンインタフェースシンポジウム2026予稿集, pp.1529–1532, 2026", "u": "", "fy": 2026}, {"y": "2026", "cat": "domestic", "t": "Attention Gap: 顔向き・操作・前額部血流のずれから作業中の空白を振り返るシステム", "a": "吉田 久遠", "v": "ヒューマンインタフェースシンポジウム2026予稿集, pp.1504–1507, 2026", "u": "", "fy": 2026, "award": "奨励賞"}, {"y": "2026", "cat": "domestic", "t": "Brain Canvas：脳血流の変化から生まれる活動振り返りアート", "a": "五十嵐 湖香, 小笠原 明音, 桑畑 一護, 佐藤 真緒, 鈴木 日和子, 小野寺 槻陽", "v": "ヒューマンインタフェースシンポジウム2026予稿集, pp.1565–1569, 2026", "u": "", "fy": 2026}, {"y": "2026-08", "cat": "domestic", "t": "デザイン思考と生成AIの活用に関する文献整理：高等学校情報科の授業設計への示唆", "a": "小倉加奈代, 白井詩沙香", "v": "情報教育シンポジウム2026論文集", "u": "", "fy": 2026}, {"y": "2026-06", "cat": "domestic", "t": "姿勢推定を用いた弓道動作自動分割における遮蔽・服装・照度条件の影響評価", "a": "佐竹愁人, 小倉加奈代", "v": "情報処理学会研究報告ヒューマンコンピュータインタラクション（HCI）", "u": "", "fy": 2026}, {"y": "2026-06", "cat": "domestic", "t": "攻撃的文脈下のSNSコメント入力における被視感喚起刺激の影響の検討", "a": "小倉加奈代, 渡邉公平", "v": "情報処理学会研究報告ヒューマンコンピュータインタラクション（HCI）, 2026", "u": "", "fy": 2026}, {"y": "2026-03", "cat": "domestic", "t": "自己否定感軽減を目的としたエクスプレッシブ・ライティングに基づくWebアプリの構築と検討", "a": "三室 菜月, 小倉 加奈代", "v": "情報処理学会インタラクション2026論文集, 1P-77, pp.457–460, 2026", "u": "https://www.interaction-ipsj.org/proceedings/2026/data/pdf/1P77.pdf", "fy": 2025}, {"y": "2026-03", "cat": "domestic", "t": "姿勢推定を用いた弓道動作の自動分割による早気検出手法の検討", "a": "佐竹 愁人, 小倉 加奈代", "v": "情報処理学会インタラクション2026論文集", "u": "", "fy": 2025}, {"y": "2025-09", "cat": "domestic", "t": "スマートフォンゲームにおけるBGMテンポがガチャ課金行動に与える影響の検討", "a": "小倉 加奈代, 岩渕 園香", "v": "ヒューマンインタフェースシンポジウム2025論文集, 1T-P01, 2025", "u": "", "fy": 2025}, {"y": "2025", "cat": "domestic", "t": "BITalinoを活用した脳波センシングによる自然な目覚めのための起床支援システムの提案", "a": "菅原 心優, 島田 健吾, 橋口 空", "v": "ヒューマンインタフェースシンポジウム2025論文集, 1S-10, 2025", "u": "", "fy": 2025}, {"y": "2025", "cat": "domestic", "t": "BITalinoを活用した筋電センサによる直感的ゲーム操作インタフェースの提案", "a": "佐竹 愁人, 吉田 久遠, 飯岡 幸恵", "v": "ヒューマンインタフェースシンポジウム2025論文集, 1S-15, 2025", "u": "", "fy": 2025}, {"y": "2025-03", "cat": "domestic", "t": "防犯環境設計を取り入れた傘盗難防止システムの検討", "a": "菅原 来, 小倉 加奈代", "v": "情報処理学会インタラクション2025論文集, 1P-76, pp.527–530, 2025", "u": "https://www.interaction-ipsj.org/proceedings/2025/data/bib/1P-76.html", "fy": 2024}, {"y": "2025-01", "cat": "domestic", "t": "防犯環境設計と傘立て利用者の自制心に着目した傘盗難防止手法の検討", "a": "菅原 来, 小倉 加奈代", "v": "研究報告ヒューマンコンピュータインタラクション（HCI）, 2025-HCI-211(17), pp.1–8, 2025", "u": "https://ipsj.ixsq.nii.ac.jp/records/241829", "fy": 2024}, {"y": "2024-07", "cat": "journal", "t": "組織内自尊感情の醸成を目的とした敬意伝播支援システムに関する基礎的検討", "a": "村尾侑哉, 高宗楓 高島健太郎, 小倉加奈代, 西本一志", "v": "情報処理学会論文誌, Vol.65(7), pp.1203–1215", "u": "", "fy": 2024}, {"y": "2024-07", "cat": "journal", "t": "Attempt to Design Electronic Bulletin Board Based on Information-Sharing Behavior Observations with Analog Bulletin Boards", "a": "Kanayo Ogura, Ryotaro Hoshi", "v": "International Journal on Advances in Software, Vol.17(1,2), pp.129–142", "u": "", "fy": 2024}, {"y": "2024-03", "cat": "domestic", "t": "セルフフィードバックと競争情報フィードバックによる食品ロスに対する意識向上と食品ロス量削減に関する効果の検証", "a": "伊藤 優那, 小倉 加奈代", "v": "情報処理学会研究報告ヒューマンコンピュータインタラクション（HCI）, 2024-HCI-207(16), pp.1–8, 2024", "u": "https://ipsj.ixsq.nii.ac.jp/records/232989", "fy": 2023}, {"y": "2024-03", "cat": "domestic", "t": "Can I Pet Your Dog?:すれちがい通信を利用した犬の飼い主と犬をなでたい人とのコミュニケーション活性化手法の提案", "a": "菅野 緋菜, 小倉 加奈代", "v": "情報処理学会研究報告ヒューマンコンピュータインタラクション（HCI）, 2024-HCI-207(30), pp.1–5, 2024", "u": "https://ipsj.ixsq.nii.ac.jp/records/233003", "fy": 2023}, {"y": "2024-01", "cat": "domestic", "t": "家庭系食品ロス削減に向けたセルフフィードバックを可能とする食品ロス記録システムの試作", "a": "伊藤 優那, 小倉 加奈代", "v": "情報処理学会研究報告ヒューマンコンピュータインタラクション（HCI）, 2024-HCI-206(35), pp.1–6, 2024", "u": "https://ipsj.ixsq.nii.ac.jp/records/231636", "fy": 2023}, {"y": "2023-04", "cat": "intl", "t": "Design of Information-Sharing Media Based on Observation of Reading and Writing Behavior on Message Boards within Large Organizations", "a": "Kanayo Ogura, Ryotaro Hoshi", "v": "Proc. of the 16th International Conference on Advances in Computer-Human Interactions (ACHI2023)", "u": "", "fy": 2023, "award": "Best Paper Award"}, {"y": "2023-04", "cat": "intl", "t": "Improvement of the Feeling of Self-Affirmation by Using a Self-Reframing Diary System", "a": "Kanayo Ogura, Rie Kimura", "v": "Proc. of the 16th International Conference on Advances in Computer-Human Interactions (ACHI2023)", "u": "", "fy": 2023}, {"y": "2023-03", "cat": "journal", "t": "Attitudes toward possible food radiation contamination following the Fukushima nuclear accident: A nine-year, ten-wave panel survey", "a": "Takashi Kusumi, Asako Miura, Kanayo Ogura, Kazuji Nishikawa", "v": "Journal of Risk Research", "u": "https://doi.org/10.1080/13669877.2023.2181856", "fy": 2022}, {"y": "2023-03", "cat": "domestic", "t": "おみくじの誘引性を利用したペットボトルリサイクル促進のためのラベル分別促進手法の提案", "a": "伊瀬友江, 小倉加奈代", "v": "情報処理学会インタラクション2023論文集, 3A-04, pp.808–810, 2023", "u": "https://www.interaction-ipsj.org/proceedings/2023/data/bib/3A-04.html", "fy": 2022}, {"y": "2023-03", "cat": "domestic", "t": "オンライングループワークにおけるカメラ映像表示の有無が議論進行に与える影響の分析", "a": "高橋未来, 小倉加奈代", "v": "情報処理学会インタラクション2023論文集, 3P-67, pp.1060–1061, 2023", "u": "https://www.interaction-ipsj.org/proceedings/2023/data/pdf/3P-67.pdf", "fy": 2022}, {"y": "2023-03", "cat": "domestic", "t": "自己肯定感向上を目的としたセルフリフレーミング日記システムの提案", "a": "木村 理恵, 小倉 加奈代", "v": "情報処理学会インタラクション2023論文集, 1P-61, pp.389–391, 2023", "u": "https://www.interaction-ipsj.org/proceedings/2023/data/pdf/1P-61.pdf", "fy": 2022}, {"y": "2023-01", "cat": "domestic", "t": "自己肯定感を高めるためのセルフリフレーミング日記帳システムの構築と有効性の検証", "a": "木村 理恵, 小倉 加奈代", "v": "研究報告ヒューマンコンピュータインタラクション（HCI）, 2023-HCI-201(32), pp.1–8, 2023", "u": "https://ipsj.ixsq.nii.ac.jp/records/223343", "fy": 2022}, {"y": "2022-12", "cat": "domestic", "t": "不快要因の有無と警告に対するスマートフォンユーザの行動変化", "a": "大塚 亜未, 小倉 加奈代, 藤原 康宏, 村山 優子, 青柳 龍也", "v": "情報処理学会研究報告セキュリティ心理学とトラスト（SPT）", "u": "", "fy": 2022}, {"y": "2022", "cat": "domestic", "t": "傘回しの身体知獲得過程における身体知形成サイクルの検証", "a": "及川 博渡, 千代原 維龍, 小倉 加奈代", "v": "2022年度日本認知科学会第39回大会予稿集, P2-051, 2022", "u": "https://www.jcss.gr.jp/meetings/jcss2022/proceedings/pdf/JCSS2022_P2-051.pdf", "fy": 2022}, {"y": "2022", "cat": "domestic", "t": "単純接触効果を狙ったショート動画警告によるセキュリティ意識向上の試み", "a": "及川 拓也, 小倉 加奈代", "v": "ヒューマンインタフェースシンポジウム2022論文集, 2022", "u": "", "fy": 2022}, {"y": "2022-08", "cat": "domestic", "t": "農薬散布車の運転操作行動可視化の試み―操作性と安全性を両立する農機デザインの実現を目指して", "a": "小倉 加奈代, 湯木 正一, プリマ オキ ディッキ アルディアンシャー, 松田 浩一", "v": "情報処理学会研究報告ヒューマンコンピュータインタラクション（HCI）, 2022", "u": "", "fy": 2022}, {"y": "2022-03", "cat": "domestic", "t": "表示形式と時間経過に着目した情報共有を支援する電子掲示板の開発と観察", "a": "星亮太朗, 小倉加奈代", "v": "研究報告ヒューマンコンピュータインタラクション（HCI）, 2022-HCI-197(32), pp.1–8, 2022", "u": "https://ipsj.ixsq.nii.ac.jp/records/217451", "fy": 2021}, {"y": "2022-03", "cat": "domestic", "t": "XRコンテンツにおけるメニュー表示がマルチタスクに及ぼす影響", "a": "芳賀康太, 小倉加奈代", "v": "研究報告ヒューマンコンピュータインタラクション（HCI）, 2022-HCI-197(47), pp.1–8, 2022", "u": "https://ipsj.ixsq.nii.ac.jp/records/217466", "fy": 2021}, {"y": "2021-11", "cat": "domestic", "t": "大規模組織内における伝言板上の情報共有行動に基づいた情報共有メディアの検討", "a": "星亮太朗, 小倉加奈代", "v": "研究報告ヒューマンコンピュータインタラクション（HCI）, 2021-HCI-195(14), pp.1–8, 2021", "u": "https://ipsj.ixsq.nii.ac.jp/records/213971", "fy": 2021}, {"y": "2021", "cat": "journal", "t": "Development of a VR Simulator for Speed Sprayer Operation Training", "a": "Y. Tanaka, O. D. A. Prima, K. Hotta, K. Ogura, K. Matsuda, S. Yuki", "v": "International Journal on Advances in Software, Vol.14(1), pp.104–113", "u": "", "fy": 2021}, {"y": "2021", "cat": "domestic", "t": "傘回しの一人称研究による身体知獲得過程の分析", "a": "渡邉 樹生, 小倉 加奈代", "v": "2021年度日本認知科学会第38回大会論文集, P2-32, pp.578–583, 2021", "u": "https://www.jcss.gr.jp/meetings/jcss2021/proceedings/keyword364.html", "fy": 2021}, {"y": "2021-08", "cat": "domestic", "t": "指の方向に着目した片手操作用仮想メニューの視認性評価", "a": "芳賀 康太, 小倉 加奈代", "v": "研究報告ヒューマンコンピュータインタラクション（HCI）, 2021-HCI-194(3), pp.1–7, 2021", "u": "https://ipsj.ixsq.nii.ac.jp/records/212280", "fy": 2021}, {"y": "2021-04", "cat": "intl", "t": "Toward the Development of a VR Simulator for Speed Sprayers", "a": "Y. Tanaka, O. D. A. Prima, K. Ogura, K. Matsuda, S. Yuki", "v": "Proc. of the 14th International Conference on Advances in Computer-Human Interactions (ACHI2021)", "u": "", "fy": 2021}, {"y": "2021-03", "cat": "domestic", "t": "参加者の積極性と親密度に左右されない対面型グループディスカッション支援手法の提案", "a": "及川 瑞紀, 小倉 加奈代", "v": "情報処理学会インタラクション2021論文集, 3A-04, pp.451–456, 2021", "u": "https://www.interaction-ipsj.org/proceedings/2021/data/bib/3A04.html", "fy": 2020}, {"y": "2021-03", "cat": "domestic", "t": "心拍変動を利用した日常生活下のストレス値測定手法の検証", "a": "久保 優希, 小倉 加奈代", "v": "情報処理学会インタラクション2021論文集, 1P-07, pp.611–614, 2021", "u": "https://www.interaction-ipsj.org/proceedings/2021/data/bib/1P07.html", "fy": 2020}, {"y": "2021-03", "cat": "domestic", "t": "自己肯定感を向上させる「褒める」行為に着目したSNSの提案", "a": "村尾 侑哉, 小倉 加奈代", "v": "情報処理学会インタラクション2021論文集, 2B-07, pp.372–377, 2021", "u": "https://www.interaction-ipsj.org/proceedings/2021/data/bib/2B07.html", "fy": 2020}, {"y": "2020-08", "cat": "journal", "t": "Countermeasures against darknet localisation attacks with packet sampling", "a": "Masaki Narita, Keisuke Kamada, Kanayo Ogura, Bhed BahadurBista, Toyoo Takata", "v": "Indonesian Journal of Electrical Engineering and Computer Science, Vol.19(2), pp.1036–1047", "u": "https://doi.org/10.11591/ijeecs.v19.i2.pp1036-1047", "fy": 2020}];
+
 const THEMES={
   nudge:{s:"行動変容デザイン",n:"行動経済学を活かした行動変容デザイン",ex:["安全確認","休憩","先延ばし","咀嚼","ゴミ分別","食品ロス"]},
   skill:{s:"行動分析・技能習得",n:"人の状態・行動の分析と技能習得支援",ex:["身体動作の分析","操作行動の分析","楽器・スポーツの技能支援"]},
@@ -638,7 +666,7 @@ const linkW=(u,l)=>u?`<span>${link(u,l)}</span>`:"";
 $("rmlink").innerHTML=link("https://researchmap.jp/read0144643","researchmap");
 
 const ug=STUDIES.filter(s=>!s.g).length;
-$("nums").innerHTML=[[ug,"学部卒業生"],[STUDIES.length-ug,"修士修了生"],[STUDIES.reduce((n,s)=>n+s.pub.length,0)+TEAMS.length,"学会等での発表"]]
+$("nums").innerHTML=[[ug,"学部卒業生"],[STUDIES.length-ug,"修士修了生"],[PUBS.length,"論文・学会発表"]]
   .map(([b,s])=>`<li><b>${b}</b><span>${s}</span></li>`).join("");
 $("tiles").innerHTML=MAIN.map(k=>`<button type="button" class="tile" style="${tv(k)}" data-goto="${k}">${ic(k)}<span><b>${THEMES[k].s}</b><span>先輩の研究 ${cnt(k)}件</span></span></button>`).join("");
 $("tgrid").innerHTML=MAIN.map(k=>`<div class="tcard" style="${tv(k)}"><div class="hd">${ic(k)}<h3>${THEMES[k].n}</h3></div>
@@ -689,6 +717,32 @@ document.addEventListener("click",e=>{
   if(e.target.closest("#more")){const from=st.n;st.n+=9;render();const nx=document.querySelector(`.card[data-i="${from}"]`);nx&&nx.focus();}
 });
 render();
+
+/* 研究業績 */
+const PCAT={journal:{n:"学術論文",c:"--tc:var(--blue-1000);--tbg:var(--blue-50)"},intl:{n:"国際会議",c:"--tc:#197a4b;--tbg:#e6f5ec"},domestic:{n:"国内発表",c:"--tc:#4d4d4d;--tbg:var(--gray-50)"}};
+const pst={cat:"all",n:12};
+function prender(){
+  const cnt=k=>PUBS.filter(p=>p.cat===k).length;
+  $("pbar").innerHTML=["all","journal","intl","domestic"].map(k=>`<button type="button" class="toggle" data-pcat="${k}" aria-pressed="${pst.cat===k}">${tick}${k==="all"?"すべて":PCAT[k].n}<span class="cnt">${k==="all"?PUBS.length:cnt(k)}</span></button>`).join("");
+  const list=PUBS.filter(p=>pst.cat==="all"||p.cat===pst.cat), show=list.slice(0,pst.n);
+  let html="",cur=null;
+  show.forEach(p=>{
+    if(p.fy!==cur){ if(cur!==null) html+="</ol>"; cur=p.fy; html+=`<h3 class="fy">${p.fy}年度</h3><ol class="plist">`; }
+    const ym=p.y.length>4?p.y.replace("-","."):p.y;
+    html+=`<li><div class="pside"><span class="pdate">${ym}</span><span class="tag" style="${PCAT[p.cat].c}">${PCAT[p.cat].n}</span></div><div class="pbody">
+      <p class="pt">${esc(p.t)}${p.award?` <span class="award">${p.award}</span>`:""}</p><p class="pm">${esc(p.a)}．${esc(p.v)}${p.u?"　"+link(p.u,"論文"):""}</p></div></li>`;
+  });
+  if(cur!==null) html+="</ol>";
+  $("plist").innerHTML=html;
+  $("pmore").innerHTML=list.length>pst.n?`<button type="button" class="btn btn-outline paw-btn" id="pmorebtn"><svg aria-hidden="true"><use href="#i-paw"/></svg>すべて表示（残り${list.length-pst.n}件）</button>`:"";
+}
+document.addEventListener("click",e=>{
+  const b=e.target.closest("[data-pcat]");
+  if(b){pst.cat=b.dataset.pcat;pst.n=12;prender();document.querySelector(`[data-pcat="${pst.cat}"]`).focus();return;}
+  if(e.target.closest("#pmorebtn")){pst.n=999;prender();}
+});
+prender();
+$("rmnote").innerHTML="教員のこれまでのすべての業績は "+link("https://researchmap.jp/read0144643","researchmap")+" をご覧ください．";
 
 $("tteam").innerHTML=TEAMS.map(t=>`<div class="tt"><span class="y">${t.y}年度</span><b>${esc(t.t)}</b><span class="v">${esc(t.pub)}</span><span>${link(t.sl,"発表資料")}</span></div>`).join("");
 
