@@ -1,0 +1,705 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>小倉研究室｜岩手県立大学 ソフトウェア情報学部</title>
+<meta name="description" content="岩手県立大学ソフトウェア情報学部 社会システムデザインコース 小倉研究室の紹介．研究テーマ，先輩の研究，配属後の流れ，研究室配属についてまとめています．">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+Mono:wght@400;700&display=swap">
+<style>
+/* Layout: デジタル庁デザインシステム（DADS）準拠．メインカラーはOrange-900（茶トラ），猫のモチーフをヘッダー・ヒーロー・手順・配属案内に配置．12カラム想定・ブレークポイント768px，余白は8px基準（8/16/24/40/64），単一のライトテーマ．
+   色・角丸・影の値は @digital-go-jp/design-tokens（MIT, © デジタル庁）より． */
+:root{
+  color-scheme:light;
+  /* DADS primitive / neutral */
+  --white:#ffffff; --black:#000000;
+  --gray-50:#f2f2f2; --gray-100:#e6e6e6; --gray-420:#949494; --gray-536:#767676; --gray-600:#666666; --gray-800:#333333; --gray-900:#1a1a1a;
+  --blue-50:#e8f1fe; --blue-100:#d9e6ff; --blue-900:#0017c1; --blue-1000:#00118f; --blue-1100:#000071; --blue-1200:#000060;
+  --yellow-300:#ffd43d; --magenta-900:#8b008b; --orange-700:#e25100;
+  /* メインカラー：Orange（茶トラ） */
+  --p:#ac3e00; --p-hover:#8b3200; --p-deep:#6d2700; --p-active:#541e00; --p-50:#ffeee2; --p-100:#ffdfca;
+  --c-black:#1f1f1f; --c-white:#ffffff; --c-line:#333333; --c-pink:#f6b6c3; --c-eye:#a7b83c; --c-cave:#6f6f72; --c-cave-dark:#58585b; --c-hole:#262626;
+  /* テーマ色（テキスト4.5:1以上 / 背景は50段階） */
+  --t-nudge:#806300; --t-nudge-bg:#fbf5e0;   /* yellow-1000 / 50 */
+  --t-skill:#197a4b; --t-skill-bg:#e6f5ec;   /* green-800 / 50 */
+  --t-comm:#006f83;  --t-comm-bg:#e9f7f9;    /* cyan-900 / 50 */
+  --t-pets:#ac3e00;  --t-pets-bg:#ffeee2;    /* orange-900 / 50 */
+  --t-mind:#6f23d0;  --t-mind-bg:#f1eafa;    /* purple-700 / 50 */
+  --t-sec:#4d4d4d;   --t-sec-bg:#f2f2f2;     /* solid-gray-700 / 50 */
+  /* 役割 */
+  --bg:var(--white); --bg-alt:var(--p-50); --text:var(--gray-900); --text-sub:var(--gray-600); --border:var(--gray-420); --primary:var(--p);
+  --font:"Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif; --mono:"Noto Sans Mono",ui-monospace,monospace;
+  --r-8:.5rem; --r-12:.75rem; --r-16:1rem; --r-24:1.5rem; --r-full:624.9375rem;
+  --elevation-1:0 2px 8px 1px rgba(0,0,0,.1),0 1px 5px 0 rgba(0,0,0,.3);
+  --elevation-4:0 6px 20px 4px rgba(0,0,0,.1),0 2px 6px 0 rgba(0,0,0,.3);
+  --sp-1:8px; --sp-2:16px; --sp-3:24px; --sp-5:40px; --sp-8:64px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:1rem;line-height:1.7;letter-spacing:.02em;-webkit-text-size-adjust:100%}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--white)}
+h1,h2,h3,h4{font-weight:700;margin:0;text-wrap:balance}
+p{margin:0}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.sub{color:var(--text-sub)}
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* リンク（DADS：青＋下線，訪問済みはマゼンタ，ホバーで下線を太く，押下中はオレンジ） */
+a{color:var(--blue-1000);text-decoration:underline;text-underline-offset:.1875rem;text-decoration-thickness:1px}
+a:visited{color:var(--magenta-900)}
+a:hover{color:var(--blue-900);text-decoration-thickness:.1875rem}
+a:active{color:var(--orange-700)}
+.ext{display:inline-block;width:1em;height:1em;vertical-align:-.12em;margin-left:.2em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+/* フォーカス（DADS：黒の外枠＋Yellow-300．変更不可） */
+:focus-visible{outline:4px solid var(--black);outline-offset:2px;box-shadow:0 0 0 2px var(--yellow-300)}
+a:focus-visible{background:var(--yellow-300);color:var(--blue-1000);border-radius:2px}
+
+/* ボタン（塗り／アウトライン，最小高さ48px，角丸8） */
+.btn{font:inherit;font-weight:700;font-size:1rem;letter-spacing:.02em;min-height:48px;padding:10px 24px;border-radius:var(--r-8);border:1px solid var(--primary);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.btn-primary{background:var(--primary);color:var(--white)}
+.btn-primary:hover{background:var(--p-hover);border-color:var(--p-hover);text-decoration:underline}
+.btn-primary:active{background:var(--p-active)}
+.btn-outline{background:var(--white);color:var(--primary)}
+.btn-outline:hover{background:var(--p-50);color:var(--p-hover);text-decoration:underline}
+.btn-outline:active{background:var(--p-100)}
+
+/* ヘッダー */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--white);border-bottom:1px solid var(--border)}
+.top .wrap{display:flex;align-items:center;gap:var(--sp-2);min-height:64px}
+.brand{font-weight:700;font-size:1.25rem;color:var(--text);text-decoration:none;white-space:nowrap}
+.brand:visited{color:var(--text)}
+.brand{display:inline-flex;align-items:center;gap:8px}
+.brand svg{width:32px;height:32px;color:var(--p)}
+/* 猫 */
+.stk{height:auto;display:block}
+.stk-hero{position:absolute;right:4px;top:-28px;width:150px}
+.stk-peek{position:absolute;right:48px;top:-150px;width:140px}
+.head-s{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:var(--sp-3)}
+.head-t{display:grid;gap:var(--sp-1)}
+.stk-head{width:132px}
+@media (prefers-reduced-motion:no-preference){.stk{transition:transform .25s}.stk:hover{transform:rotate(-4deg) scale(1.04)}}
+
+@media (prefers-reduced-motion:no-preference){
+  .cat .eye{animation:blink 7s infinite}
+  .cat:hover .eye{animation:blink .9s 2}
+  @keyframes blink{0%,94%,100%{transform:scaleY(1)}97%{transform:scaleY(.1)}}
+}
+.tiles-wrap{position:relative;padding-top:156px}
+.paw-btn svg{width:20px;height:20px;fill:currentColor}
+.catlove{display:inline-flex;align-items:center;gap:6px}
+.catlove svg{width:24px;height:24px;color:var(--p)}
+@media (max-width:767px){.stk-peek{right:12px;width:104px;top:-110px}.cta-panel{margin-top:112px}.stk-hero{width:112px;top:-20px}.tiles-wrap{padding-top:118px}.stk-head{width:80px}}
+.top nav{min-width:0;overflow-x:auto;margin-left:auto;scrollbar-width:none}
+.top nav::-webkit-scrollbar{display:none}
+.top nav ul{display:flex;gap:4px;list-style:none;margin:0;padding:4px}
+.top nav a{display:flex;align-items:center;min-height:44px;padding:0 12px;font-size:1rem;color:var(--text);text-decoration:none;white-space:nowrap;border-radius:var(--r-8)}
+.top nav a:hover{text-decoration:underline;background:var(--p-50)}
+.top nav a.cta{background:var(--primary);color:var(--white);font-weight:700}
+.top nav a.cta:hover{background:var(--p-hover)}
+
+/* セクション */
+section>.wrap{padding-block:var(--sp-8)}
+.alt{background:var(--bg-alt);--border:var(--gray-536)}
+.head{display:grid;gap:var(--sp-1);margin-bottom:var(--sp-5)}
+.head .en{font-family:var(--mono);font-size:.875rem;letter-spacing:.08em;color:var(--text-sub)}
+.head h2{font-size:2rem;line-height:1.5;letter-spacing:.01em}
+.head p{max-width:40em}
+@media (max-width:767px){.head h2{font-size:1.75rem}section>.wrap{padding-block:var(--sp-5)}}
+
+/* ヒーロー */
+.hero .wrap{padding-block:var(--sp-8);display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--sp-5);align-items:center}
+.eyebrow{font-size:1rem;color:var(--text-sub)}
+.hero h1{font-size:3.5625rem;line-height:1.4;letter-spacing:0;margin-top:var(--sp-1)}
+.catch{font-size:1.75rem;line-height:1.5;letter-spacing:.01em;font-weight:700;margin-top:var(--sp-3)}
+.catch em{font-style:normal;color:var(--primary)}
+.lead{margin-top:var(--sp-2);max-width:32em}
+.nums{display:flex;flex-wrap:wrap;gap:var(--sp-3) var(--sp-5);margin:var(--sp-3) 0 0;padding:0;list-style:none}
+.nums li{display:grid}
+.nums b{font-family:var(--mono);font-size:2.25rem;line-height:1.4}
+.nums span{font-size:1rem;color:var(--text-sub)}
+.tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--sp-2)}
+.tile{font:inherit;letter-spacing:.02em;text-align:left;cursor:pointer;border-radius:var(--r-16);padding:var(--sp-3) var(--sp-2);min-height:160px;display:flex;flex-direction:column;justify-content:space-between;gap:var(--sp-2);background:var(--tbg);border:1px solid var(--tc);color:var(--text);transition:box-shadow .15s}
+.tile:hover{box-shadow:var(--elevation-1)}
+.tile:hover b{text-decoration:underline}
+.tile svg{width:40px;height:40px;color:var(--tc)}
+.tile b{display:block;font-size:1.125rem;line-height:1.6;color:var(--text)}
+.tile span{font-size:1rem;color:var(--text-sub)}
+@media (max-width:767px){.hero .wrap{grid-template-columns:1fr;padding-block:var(--sp-5)}.hero h1{font-size:2.25rem}.catch{font-size:1.375rem}.tile{min-height:136px}}
+
+svg.ic{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* 考え方 */
+.vs{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:var(--sp-2);align-items:stretch;margin-bottom:var(--sp-5)}
+.vs>div{border-radius:var(--r-16);padding:var(--sp-3);text-align:center;border:1px solid var(--border);background:var(--white);display:grid;gap:4px;align-content:center}
+.vs>div.us{border:2px solid var(--primary)}
+.vs .lbl{font-size:1rem;color:var(--text-sub)}
+.vs b{font-size:1.375rem;line-height:1.5}
+.vs .us b{color:var(--primary)}
+.vs .arrow{align-self:center;width:32px;height:32px;color:var(--text-sub)}
+.flow3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin:0;padding:0;list-style:none}
+.flow3 li{display:grid;justify-items:center;align-content:start;text-align:center;gap:var(--sp-1);position:relative}
+.flow3 li+li::before{content:"";position:absolute;top:30px;right:calc(50% + 52px);width:calc(100% - 72px);height:20px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 20'%3E%3Cg fill='%23ac3e00' fill-opacity='.55'%3E%3Cellipse cx='9' cy='10' rx='4' ry='3.6'/%3E%3Ccircle cx='15' cy='5' r='1.8'/%3E%3Ccircle cx='16.5' cy='9' r='1.8'/%3E%3Ccircle cx='16.5' cy='13' r='1.8'/%3E%3Ccircle cx='15' cy='16.5' r='1.6'/%3E%3C/g%3E%3C/svg%3E") left center/28px 20px space}
+.flow3 .bub{width:80px;height:80px;border-radius:var(--r-full);display:grid;place-items:center;background:var(--white);border:2px solid var(--primary);color:var(--primary)}
+.flow3 .bub svg{width:36px;height:36px}
+.flow3 .no{font-family:var(--mono);font-size:.875rem;color:var(--text-sub)}
+.flow3 b{font-size:1.25rem;line-height:1.5}
+.note-box{margin-top:var(--sp-5);padding:var(--sp-2) var(--sp-3);border-radius:var(--r-8);background:var(--white);border-left:4px solid var(--primary)}
+@media (max-width:767px){
+  .vs{grid-template-columns:1fr}.vs .arrow{justify-self:center;transform:rotate(90deg)}
+  .flow3{grid-template-columns:1fr;gap:var(--sp-3)}
+  .flow3 li{grid-template-columns:80px minmax(0,1fr);justify-items:start;text-align:left;column-gap:var(--sp-2);align-items:center}
+  .flow3 li .bub{grid-row:1/span 3}.flow3 li+li::before{display:none}
+}
+
+/* テーマ */
+.tgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}
+.tcard{background:var(--white);border-radius:var(--r-16);border:1px solid var(--border);padding:var(--sp-3);display:grid;gap:var(--sp-2);align-content:start;border-top:8px solid var(--tc)}
+.tcard .hd{display:flex;gap:var(--sp-2);align-items:center}
+.tcard .hd svg{width:40px;height:40px;color:var(--tc)}
+.tcard h3{font-size:1.25rem;line-height:1.5}
+.chips{display:flex;flex-wrap:wrap;gap:var(--sp-1);list-style:none;margin:0;padding:0}
+.chips li{font-size:1rem;padding:2px 12px;border-radius:var(--r-full);background:var(--gray-50);border:1px solid transparent}
+.tcard .btn{justify-self:start}
+.also{margin-top:var(--sp-3)}
+@media (max-width:767px){.tgrid{grid-template-columns:1fr;gap:var(--sp-2)}}
+
+/* 先輩の研究 */
+.bar{display:flex;flex-wrap:wrap;gap:var(--sp-1);align-items:center;margin-bottom:var(--sp-3)}
+.toggle{font:inherit;font-size:1rem;letter-spacing:.02em;min-height:44px;padding:0 16px;border-radius:var(--r-full);border:1px solid var(--border);background:var(--white);color:var(--text);cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+.toggle:hover{background:var(--p-50);text-decoration:underline}
+.toggle[aria-pressed="true"]{background:var(--primary);border-color:var(--primary);color:var(--white);font-weight:700}
+.toggle .chk{display:none;width:16px;height:16px}
+.toggle[aria-pressed="true"] .chk{display:inline-block}
+.dot{width:12px;height:12px;border-radius:var(--r-full);display:inline-block;flex:none;background:var(--tc);border:1px solid var(--white)}
+.sel{display:inline-flex;align-items:center;gap:8px;margin-left:auto}
+.sel select{font:inherit;font-size:1rem;min-height:44px;padding:0 12px;border-radius:var(--r-8);border:1px solid var(--border);background:var(--white);color:var(--text)}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--sp-3)}
+.card{font:inherit;letter-spacing:.02em;text-align:left;cursor:pointer;background:var(--white);border:1px solid var(--border);border-radius:var(--r-12);padding:var(--sp-2) var(--sp-2) var(--sp-3);display:flex;flex-direction:column;gap:var(--sp-1);min-width:0;color:var(--text);transition:box-shadow .15s}
+.card:hover{box-shadow:var(--elevation-1);border-color:var(--primary)}
+.card:hover .ttl{text-decoration:underline}
+.card .meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:.875rem;color:var(--text-sub)}
+.card .meta .y{font-family:var(--mono)}
+.tag{display:inline-flex;align-items:center;gap:6px;padding:0 10px;border-radius:var(--r-full);background:var(--tbg);color:var(--tc);font-weight:700;font-size:.875rem;line-height:1.7}
+.card .ttl{font-size:1rem;font-weight:700;line-height:1.7;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.card .nm{font-size:1rem;color:var(--text-sub);margin-top:auto}
+.morewrap{text-align:center;margin-top:var(--sp-3)}
+.fine{font-size:.875rem;color:var(--text-sub);margin-top:var(--sp-3)}
+@media (max-width:767px){.cards{grid-template-columns:1fr;gap:var(--sp-2)}.sel{margin-left:0}}
+
+/* ダイアログ（高さレベル4＋オーバーレイシェード） */
+dialog{border:1px solid var(--border);border-radius:var(--r-16);padding:0;max-width:min(720px,calc(100vw - 32px));width:100%;max-height:calc(100dvh - 48px);background:var(--white);color:var(--text);box-shadow:var(--elevation-4)}
+dialog::backdrop{background:rgba(0,0,0,.5)}
+.dlg{display:grid;gap:var(--sp-2);padding:var(--sp-3);border-top:8px solid var(--tc)}
+.dlg .bar-top{display:flex;justify-content:space-between;align-items:center;gap:var(--sp-2)}
+.dlg h3{font-size:1.375rem;line-height:1.5}
+.dlg ul{margin:0;padding-left:1.4em}
+.links{display:flex;flex-wrap:wrap;gap:var(--sp-1) var(--sp-3)}
+.pubs{display:grid;gap:var(--sp-1);padding:var(--sp-2);border-radius:var(--r-8);background:var(--gray-50)}
+.pubs h4{font-size:1rem}
+.pubs p{font-size:.875rem;line-height:1.7}
+.close{min-height:44px;padding:0 16px}
+
+/* 配属後の流れ */
+.tline{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;position:relative;margin:0;padding:0;list-style:none}
+.tline::before{content:"";position:absolute;left:20px;right:20px;top:19px;border-top:2px solid var(--border)}
+.tline li{position:relative;display:grid;gap:var(--sp-1);align-content:start}
+.tline .pt{width:40px;height:40px;border-radius:var(--r-full);background:var(--primary);color:var(--white);display:grid;place-items:center;font-family:var(--mono);font-weight:700}
+.tline .when{font-weight:700;color:var(--primary);margin-top:var(--sp-1)}
+.tline b{font-size:1.25rem;line-height:1.5}
+@media (max-width:767px){.tline{grid-template-columns:1fr;gap:var(--sp-3);padding-left:56px}.tline::before{left:19px;right:auto;top:0;bottom:0;border-top:0;border-left:2px solid var(--border)}.tline .pt{position:absolute;left:-56px;top:0}.tline .when{margin-top:6px}}
+.teams{margin-top:var(--sp-5)}
+.teams h3{font-size:1.125rem;line-height:1.6;margin-bottom:var(--sp-2)}
+.tteam{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--sp-3)}
+.tt{background:var(--white);border:1px solid var(--border);border-radius:var(--r-12);padding:var(--sp-2);display:grid;gap:var(--sp-1);align-content:start;min-width:0}
+.tt .y{font-family:var(--mono);font-size:.875rem;color:var(--text-sub)}
+.tt b{line-height:1.7}
+.tt .v{font-size:.875rem;color:var(--text-sub)}
+@media (max-width:767px){.tteam{grid-template-columns:1fr;gap:var(--sp-2)}}
+details.acc{margin-top:var(--sp-5);border:1px solid var(--border);border-radius:var(--r-8);background:var(--white)}
+details.acc summary{cursor:pointer;min-height:48px;padding:12px var(--sp-2);font-weight:700;color:var(--p);display:flex;align-items:center}
+details.acc summary:hover{text-decoration:underline}
+details.acc .in{padding:0 var(--sp-2) var(--sp-2)}
+.sched{overflow-x:auto}
+.sched table{border-collapse:collapse;min-width:520px;width:100%}
+.sched th,.sched td{border:1px solid var(--border);padding:8px 12px;text-align:left}
+.sched thead th{background:var(--gray-50)}
+.sched td.own{font-weight:700;background:var(--p-50)}
+
+/* 方針 */
+.pgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--sp-3);margin:0;padding:0;list-style:none}
+.pgrid li{border-radius:var(--r-16);padding:var(--sp-3);background:var(--white);border:1px solid var(--border);display:grid;gap:var(--sp-1);align-content:start}
+.pgrid b{font-size:1.25rem;line-height:1.5;color:var(--primary)}
+@media (max-width:767px){.pgrid{grid-template-columns:1fr;gap:var(--sp-2)}}
+
+/* 様子 */
+.life{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:var(--sp-8)}
+.big{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--sp-2);margin:0;padding:0;list-style:none}
+.big li{background:var(--white);border:1px solid var(--border);border-radius:var(--r-16);padding:var(--sp-2);display:grid;text-align:center}
+.big b{font-family:var(--mono);font-size:3rem;line-height:1.4}
+.cap{font-size:.875rem;color:var(--text-sub);margin-top:var(--sp-1)}
+.life h3{font-size:1.125rem;line-height:1.6;margin-bottom:var(--sp-2)}
+.grp+.grp{margin-top:var(--sp-3)}
+.bar2{display:grid;gap:var(--sp-1);margin:0;padding:0;list-style:none}
+.bar2 li{display:grid;grid-template-columns:7.5em minmax(0,1fr) 3em;gap:var(--sp-2);align-items:center}
+.bar2 .track{height:12px;border-radius:var(--r-full);background:var(--gray-100);overflow:hidden}
+.bar2 .fill{display:block;height:100%;background:var(--primary)}
+.bar2 .v{font-family:var(--mono);text-align:right}
+@media (max-width:767px){.life{grid-template-columns:1fr;gap:var(--sp-5)}}
+
+/* 配属について */
+.cta-panel{position:relative;margin-top:140px;background:var(--p-hover);color:var(--white);border-radius:var(--r-24);padding:var(--sp-5);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--sp-5);align-items:center}
+.cta-panel h3{font-size:1.75rem;line-height:1.5}
+.cta-panel p{margin-top:var(--sp-2)}
+.cta-panel ol{margin:0;padding:0;list-style:none;display:grid;gap:var(--sp-2);counter-reset:s}
+.cta-panel li{display:grid;grid-template-columns:32px 1fr;gap:var(--sp-2);align-items:start;counter-increment:s}
+.cta-panel li::before{content:counter(s);width:32px;height:32px;border-radius:var(--r-full);background:var(--white);color:var(--p-hover);display:grid;place-items:center;font-family:var(--mono);font-weight:700}
+.mail{display:flex;flex-wrap:wrap;gap:var(--sp-1);align-items:center;margin-top:var(--sp-3)}
+.mail code{font-family:var(--mono);font-size:1.0625rem;padding:10px 16px;border-radius:var(--r-8);background:var(--white);color:var(--text);user-select:all;word-break:break-all}
+.mail .btn{background:transparent;color:var(--white);border-color:var(--white)}
+.mail .btn:hover{background:var(--p-deep);text-decoration:underline}
+#copyMsg{min-height:1.7em;margin-top:var(--sp-1)}
+.req{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--sp-3);margin-top:var(--sp-3)}
+.req>div{background:var(--white);border:1px solid var(--border);border-radius:var(--r-16);padding:var(--sp-3);display:grid;gap:var(--sp-2);align-content:start}
+.req h3{font-size:1.25rem;line-height:1.5}
+.req details summary{cursor:pointer;color:var(--p);font-weight:700;text-decoration:underline;min-height:44px;display:flex;align-items:center}
+.req details p{margin-top:var(--sp-1)}
+@media (max-width:767px){.cta-panel{grid-template-columns:1fr;padding:var(--sp-3);gap:var(--sp-3)}.cta-panel h3{font-size:1.375rem}.req{grid-template-columns:1fr;gap:var(--sp-2)}}
+
+/* 教員・フッター */
+.teacher{display:flex;flex-wrap:wrap;gap:var(--sp-1) var(--sp-3);align-items:center}
+.avatar{width:88px;height:auto}
+.teacher b{font-size:1.25rem}
+footer{border-top:1px solid var(--border)}
+footer .wrap{padding-block:var(--sp-3) var(--sp-5);font-size:.875rem;color:var(--text-sub)}
+</style>
+</head>
+<body>
+
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-nudge" viewBox="0 0 32 32"><path d="M6 24c4-10 10-14 20-14"/><path d="M20 5l6 5-6 5"/><circle cx="6" cy="24" r="2.5"/></symbol>
+  <symbol id="i-skill" viewBox="0 0 32 32"><circle cx="16" cy="6" r="3"/><path d="M16 9v9l-5 9"/><path d="M16 18l5 9"/><path d="M8 13l8-2 8 2"/></symbol>
+  <symbol id="i-comm" viewBox="0 0 32 32"><path d="M4 7h16v10H11l-5 4v-4H4z"/><path d="M24 12h4v10h-2v4l-5-4h-7v-3"/></symbol>
+  <symbol id="i-pets" viewBox="0 0 32 32"><ellipse cx="16" cy="21" rx="6" ry="5"/><circle cx="8" cy="13" r="2.5"/><circle cx="13" cy="8" r="2.5"/><circle cx="19" cy="8" r="2.5"/><circle cx="24" cy="13" r="2.5"/></symbol>
+  <symbol id="i-find" viewBox="0 0 32 32"><circle cx="14" cy="14" r="8"/><path d="M20 20l7 7"/></symbol>
+  <symbol id="i-make" viewBox="0 0 32 32"><path d="M16 4a8 8 0 0 0-5 14v4h10v-4A8 8 0 0 0 16 4z"/><path d="M12 26h8"/></symbol>
+  <symbol id="i-check" viewBox="0 0 32 32"><rect x="5" y="5" width="22" height="22" rx="4"/><path d="M10 16l4 4 8-9"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 32 32"><path d="M6 16h20"/><path d="M19 9l7 7-7 7"/></symbol>
+  <symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
+  <symbol id="i-cat" viewBox="0 0 32 32">
+    <path d="M5 14C3 9 3.5 4 6 2.5c2.3-.8 5.5 2.6 7.3 5.6z" fill="#1a1a1a" stroke="none"/>
+    <path d="M6.6 11.6c-1-3-.8-6 .6-7 1.4-.3 3.4 2.3 4.6 4.3z" fill="#f6b6c3" stroke="none"/>
+    <path d="M27 14c2-5 1.5-10-1-11.5-2.3-.8-5.5 2.6-7.3 5.6z" fill="#1a1a1a" stroke="none"/>
+    <path d="M25.4 11.6c1-3 .8-6-.6-7-1.4-.3-3.4 2.3-4.6 4.3z" fill="#f6b6c3" stroke="none"/>
+    <clipPath id="icclip"><ellipse cx="16" cy="18" rx="11.5" ry="10.5"/></clipPath>
+    <ellipse cx="16" cy="18" rx="11.5" ry="10.5" fill="#fff" stroke="none"/>
+    <g clip-path="url(#icclip)"><path d="M0 0h32v11c-3 .6-6 2-8 2.4-2-.5-4-1.5-5.3-1.6L16.6 9.6 16 12.2l-.6-2.6-1.4 2.2c-2.3.2-4.6 1-7 1.6C5 13.2 2 12.6 0 13z" fill="#1a1a1a" stroke="none"/><path d="M18.6 11.9c3 .3 6 1.2 9 3v11c-1.6 1-3.2 1-4.4-.3-1.2-2.2-1.4-4.6-2.4-6.6-.9-1.6-1.7-3.9-2.2-7.1z" fill="#1a1a1a" stroke="none"/></g>
+    <ellipse cx="16" cy="18" rx="11.5" ry="10.5" fill="none" stroke="#1a1a1a" stroke-width="1.3"/>
+    <circle cx="11.6" cy="17.6" r="2.1" fill="#a7b83c" stroke="none"/><ellipse cx="11.6" cy="17.7" rx=".6" ry="1.6" fill="#1a1a1a" stroke="none"/>
+    <circle cx="20.4" cy="17.6" r="2.1" fill="#a7b83c" stroke="none"/><ellipse cx="20.4" cy="17.7" rx=".6" ry="1.6" fill="#1a1a1a" stroke="none"/>
+    <path d="M14.8 20.8h2.4l-1.2 1.4z" fill="#f29cb2" stroke="#f29cb2" stroke-width=".8" stroke-linejoin="round"/>
+    <path d="M14.4 23.4q.8.8 1.6 0 .8.8 1.6 0" fill="none" stroke="#1a1a1a" stroke-width=".9" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="i-paw" viewBox="0 0 24 24"><ellipse cx="12" cy="16" rx="5" ry="4.2"/><circle cx="5.5" cy="10" r="2.2"/><circle cx="9.5" cy="5.8" r="2.2"/><circle cx="14.5" cy="5.8" r="2.2"/><circle cx="18.5" cy="10" r="2.2"/></symbol>
+  <symbol id="i-tick" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></symbol>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top"><svg class="ic" aria-hidden="true"><use href="#i-cat"/></svg>小倉研究室</a>
+    <nav aria-label="ページ内メニュー"><ul>
+      <li><a href="#approach">考え方</a></li>
+      <li><a href="#themes">研究テーマ</a></li>
+      <li><a href="#archive">先輩の研究</a></li>
+      <li><a href="#seminar">配属後の流れ</a></li>
+      <li><a href="#life">研究室の様子</a></li>
+      <li><a class="cta" href="#apply">配属について</a></li>
+    </ul></nav>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">岩手県立大学 ソフトウェア情報学部 社会システムデザインコース</p>
+      <h1>小倉研究室</h1>
+      <p class="catch">人の<em>考え方や行動のくせ</em>から，よりよい行動とコミュニケーションをデザインする．</p>
+      <p class="lead">「こんなモノが欲しかった」「これが知りたかった」と自分で思える研究を大切にしています．</p>
+      <ul class="nums" id="nums"></ul>
+    </div>
+    <div class="tiles-wrap">
+      <img class="stk stk-hero" src="img/ohayo.webp" width="247" height="313" alt="" decoding="async">
+      <div class="tiles" id="tiles" role="group" aria-label="研究テーマから先輩の研究を見る"></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="approach">
+  <div class="wrap">
+    <div class="head head-s"><div class="head-t"><span class="en">APPROACH</span><h2>技術からではなく，人間から考える</h2>
+      <p>人は気分や状況で行動が変わるもの．その前提に立って問題を解きます．</p></div><img class="stk stk-head" src="img/eeee.webp" width="248" height="269" alt="" decoding="async"></div>
+    <div class="vs">
+      <div><span class="lbl">よくあるアプローチ</span><b>新しい技術を<br>生み出す・試す</b></div>
+      <svg class="ic arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+      <div class="us"><span class="lbl">この研究室</span><b>人間中心に<br>新しい使い方を生み出す</b></div>
+    </div>
+    <ol class="flow3">
+      <li><span class="bub"><svg class="ic" aria-hidden="true"><use href="#i-find"/></svg></span><span class="no">STEP 1</span><b>見つける</b><span>日常や社会の中の問題を発見する</span></li>
+      <li><span class="bub"><svg class="ic" aria-hidden="true"><use href="#i-make"/></svg></span><span class="no">STEP 2</span><b>つくる</b><span>行動や考え方のくせに着目して，解決策を実装する</span></li>
+      <li><span class="bub"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg></span><span class="no">STEP 3</span><b>確かめる</b><span>実験や調査で有効性を実証する</span></li>
+    </ol>
+    <p class="note-box">研究テーマは，やりたいことを聞いて一緒に相談して決めます．</p>
+  </div>
+</section>
+
+<section id="themes">
+  <div class="wrap">
+    <div class="head"><span class="en">THEMES</span><h2>研究テーマ</h2></div>
+    <div class="tgrid" id="tgrid"></div>
+    <p class="also sub">ほかにも，セキュリティ心理学（詐欺，ダークパターンなど）や教科「情報」に関する研究も対象です．</p>
+  </div>
+</section>
+
+<section class="alt" id="archive">
+  <div class="wrap">
+    <div class="head head-s"><div class="head-t"><span class="en">WORKS</span><h2>先輩の研究</h2><p>カードを選ぶと，概要や発表資料を見られます．</p></div><img class="stk stk-head" src="img/iine.webp" width="266" height="302" alt="" decoding="async"></div>
+    <div class="bar" id="bar" role="group" aria-label="テーマで絞り込む"></div>
+    <div class="cards" id="cards"></div>
+    <div class="morewrap" id="morewrap"></div>
+    <p class="fine">2019年度以前の卒業研究は高田研究室（言語情報学講座）として指導しています．2022年度以前の卒業論文要旨へのリンクは掲載していません．</p>
+  </div>
+</section>
+
+<section id="seminar">
+  <div class="wrap">
+    <div class="head head-s"><div class="head-t"><span class="en">SEMINAR</span><h2>配属後の流れ</h2></div><img class="stk stk-head" src="img/remind.webp" width="253" height="294" alt="" decoding="async"></div>
+    <ol class="tline">
+      <li><span class="pt" aria-hidden="true">1</span><span class="when">3年 前期</span><b>チームでコンテストに挑戦</b><p>学生イノベーションコンテスト「SICHI」で，ガジェットを使った新しい体験を企画・実装し，学会でデモ発表します．</p></li>
+      <li><span class="pt" aria-hidden="true">2</span><span class="when">3年 後期</span><b>自分の問いを見つける</b><p>インタビューや調査，プロトタイプづくりで卒業研究のテーマを固めます．研究日誌もここから．</p></li>
+      <li><span class="pt" aria-hidden="true">3</span><span class="when">4年</span><b>卒業研究</b><p>ゼミで進捗発表と論文紹介．他の研究室の先生にも副指導に入ってもらいます．</p></li>
+    </ol>
+    <div class="teams"><h3>3年前期チームの成果（<a href="https://sites.google.com/view/sichi/" target="_blank" rel="noopener">SICHI<span class="vh">（新しいタブで開きます）</span></a><svg class="ext" aria-hidden="true"><use href="#i-ext"/></svg>）</h3><div class="tteam" id="tteam"></div></div>
+    <details class="acc"><summary>3年生の演習の時間割を見る</summary>
+      <div class="in">
+        <div class="sched"><table>
+          <thead><tr><th scope="col">曜日・時限</th><th scope="col">前期 前半（4〜6月）</th><th scope="col">前期 後半</th><th scope="col">後期</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">火曜5限</th><td class="own" colspan="2">所属研究室の演習</td><td class="own" rowspan="2">所属研究室の演習</td></tr>
+            <tr><th scope="row">水曜2限</th><td colspan="2">—</td></tr>
+            <tr><th scope="row">金曜5限</th><td>選択演習1</td><td>選択演習2</td><td>—</td></tr>
+          </tbody></table></div>
+        <p class="fine" style="margin-top:8px">選択演習は，同じコース内の他の研究室の教員の演習から選びます．</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section class="alt" id="policy">
+  <div class="wrap">
+    <div class="head head-s"><div class="head-t"><span class="en">POLICY</span><h2>研究室の方針</h2></div><img class="stk stk-head" src="img/uun.webp" width="244" height="259" alt="" decoding="async"></div>
+    <ul class="pgrid">
+      <li><b>まずはやってみる</b><p>やってみないとわからないことはたくさんある．教員が正しくないことも当然ある．</p></li>
+      <li><b>主体性を尊重する</b><p>可能な限りサポートします．ただし，自分で決めたことは投げ出さない．</p></li>
+      <li><b>卒論はラストチャンス</b><p>進学しないなら，好きなことができる最後の機会と思って．</p></li>
+      <li><b>考えたことを言語化する</b><p>Cosenseでメモを取り，ゼミでも使います．</p></li>
+    </ul>
+  </div>
+</section>
+
+<section id="life">
+  <div class="wrap">
+    <div class="head head-s"><div class="head-t"><span class="en">LIFE</span><h2>研究室の様子</h2><p>座席はフリー制で，普段は静かです．模様替えは大歓迎．</p></div><img class="stk stk-head" src="img/oyasumi.webp" width="269" height="286" alt="" decoding="async"></div>
+    <div class="life">
+      <div>
+        <ul class="big"><li><b>1</b><span>教員</span></li><li><b>7</b><span>4年生</span></li><li><b>6</b><span>3年生</span></li></ul>
+        <p class="cap">2025年度のメンバー</p>
+        <div class="grp" style="margin-top:var(--sp-5)"><h3>卒業生の進路（2020〜2024年度・学部）</h3><ul class="bar2" id="career"></ul>
+        <p class="cap">大学院進学のうち1名はJAIST．修士修了生2名は就職．</p></div>
+      </div>
+      <div>
+        <div class="grp"><h3>研究用の機材</h3><ul class="chips">
+          <li>VRヘッドセット</li><li>GPU搭載PC</li><li>研究用スマホ</li><li>ビデオカメラ</li><li>簡易脳波計</li><li>心拍モニタ</li><li>筋電センサ</li><li>BITalino</li><li>mocopi</li><li>Kinect</li><li>簡易アイトラッカー</li></ul></div>
+        <div class="grp"><h3>部屋にあるもの</h3><ul class="chips">
+          <li>55インチディスプレイ</li><li>Fire TV Stick</li><li>予備モニター</li><li>冷蔵庫</li><li>電子レンジ</li><li>電気ケトル</li><li>雀卓</li></ul></div>
+        <div class="grp"><h3>学外との交流</h3><ul class="chips"><li>JAIST 西本研究室</li><li>NPO法人もりねこ</li></ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="apply">
+  <div class="wrap">
+    <div class="head"><span class="en">JOIN US</span><h2>研究室配属について</h2></div>
+    <div class="cta-panel">
+      <img class="stk stk-peek" src="img/nenene.webp" width="244" height="298" alt="" decoding="async">
+      <div>
+        <h3>まずは気軽に話しに来てください</h3>
+        <p>実情は先輩に聞くのがいちばん．研究室に人がいそうなときは入ってOKです．配属戦略の相談も歓迎，複数人での相談もどうぞ．</p>
+      </div>
+      <div>
+        <ol>
+          <li>研究室紹介期間に案内する相談可能日から，希望日時を2〜3個選ぶ</li>
+          <li>メールで予約する（1人30分，複数人60分）</li>
+        </ol>
+        <div class="mail"><code id="addr">ogura_k@iwate-pu.ac.jp</code><button type="button" class="btn" id="copy">アドレスをコピー</button></div>
+        <p id="copyMsg" aria-live="polite"></p>
+      </div>
+    </div>
+    <div class="req">
+      <div><h3>歓迎する人</h3><p>身近な問題に「なぜだろう」「もっとこうできないか」と問いを持ち，試すことを楽しめる人．</p>
+        <details><summary>くわしく見る</summary><p>人や日常生活・社会の中の問題に興味があり，自分なりの問いを持って考え，試してみることを楽しめる人を歓迎します．プログラミング等の実装技術は，現時点の得意・不得意よりも，研究に必要な技術を主体的に学ぶ姿勢を重視します．</p></details></div>
+      <div><h3>選考</h3><p>面接はしません．希望者が多い場合は，成績・履修科目・研究室訪問状況で選考します．</p>
+        <details><summary>くわしく見る</summary><p>新3年生：成績（専門必修科目中心），履修科目（応用心理学，ヒューマンインタフェースの履修状況），研究室訪問状況をもとに選考します．</p><p>新4年生：3年次に本研究室に所属していたメンバーを優遇します．他研究室からの異動は必ず事前に相談してください．</p></details></div>
+      <div><h3>履修しておくとよい科目</h3><ul class="chips"><li>ヒューマンインタフェース</li><li>情報環境論</li><li>応用心理学</li><li>システムデザイン実践論</li><li>システムデザインPBL</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="teacher">
+  <div class="wrap" style="padding-block:var(--sp-5)">
+    <div class="teacher"><img class="avatar" src="img/avatar.webp" width="227" height="240" alt="小倉加奈代のイラスト（愛猫を抱いている）"><b>小倉 加奈代</b><span>講師</span><span>担当：応用心理学（2年），コミュニケーション論（3年）ほか</span><span id="rmlink"></span></div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">小倉研究室　岩手県立大学 ソフトウェア情報学部 社会システムデザインコース</div></footer>
+
+<dialog id="dlg" aria-labelledby="dlgTitle"></dialog>
+
+<script>
+const STUDIES = [
+/* 2025 */
+{y:2025,th:"nudge",t:"ソーシャルゲームにおける視覚的効果を取り入れたガチャ演出が射幸性の構成要素に及ぼす心理的影響の検討",n:"黒坂 蘭",
+ s:"本研究では，ソーシャルゲームにおける視覚的効果を取り入れたガチャ演出が，射幸性の構成要素である期待，快情動，生理的覚醒，行動衝動に与える心理的影響を検討するためのオンライン質問紙実験を計画した．従来研究が排出確率や報酬構造といった仕組みの側面に主に着目してきたのに対し，本研究はガチャの視覚的演出の設計に焦点を当てる点に特徴がある．",
+ ab:"https://utas.iwate-pu.org/published_abstracts/2025_0312021051",sl:"https://scrapbox.io/files/6ad8703ece9e6e5449abf3e1.pdf",vd:"https://scrapbox.io/files/6ad875e5ce9e6e5449ac01b0.mp4",vdl:"実験素材動画",pub:[]},
+{y:2025,th:"comm",t:"生成AIを用いた対話練習が誘いを断る行為に及ぼす影響",n:"菅原 悠生",
+ s:"本研究は，心理的負担が大きい「誘いを断る行為」に対し，生成AIを用いた対話練習環境を構築し，その練習が与える学習効果を検証する．実験では，AIとの対話群とテキスト教材群を比較し，表現面と内容面の評価基準に基づきスキル向上を測定する．AI練習の有効性と，従来型の自習方法に対する優位性を統計的に明らかにすることを目的とする．",
+ ab:"https://utas.iwate-pu.org/published_abstracts/2025_0312022080",sl:"https://scrapbox.io/files/6ad87089ce9e6e5449abf47b.pdf",vd:"https://scrapbox.io/files/6ad870bace9e6e5449abf4ee.mp4",pub:[]},
+{y:2025,th:"mind",t:"生成AIを用いたリフレーミング支援アプリが大学生のレジリエンスに与える影響の検討",n:"鈴木 琉介",
+ s:"近年，逆境から立ち直る力「レジリエンス」の重要性が高まっている．本研究では，レジリエンスを高めるために有効な，多角的な視点から物事を捉え直す手法であるリフレーミングを支援する生成AI搭載アプリを開発し，大学生17名を対象に実験を行った．結果，測定尺度（160点満点）の平均得点が102.82点から119.41点へ有意に向上した（p<.001）．特に思考の切り替えが苦手な層ほど改善幅が大きく，本アプリは思考変容を促す有効な支援手段となる可能性が示された．",
+ ab:"https://utas.iwate-pu.org/published_abstracts/2025_0312022084",sl:"https://scrapbox.io/files/6ad87119ce9e6e5449abf5a4.pdf",vd:"https://scrapbox.io/files/6ad8713cce9e6e5449abf5ee.mp4",
+ pub:[["小倉 加奈代, 鈴木 琉介：生成AIを用いたリフレーミング支援アプリによる否定的出来事の捉え直し促進の予備的検討，ヒューマンインタフェースシンポジウム2026論文集, 2026.",""]]},
+{y:2025,th:"comm",t:"日本語テキストコミュニケーションにおける返信までの時間推定に対する機械学習手法の適用可能性の検討",n:"高橋 千紘",
+ s:"大学生活ではメッセージアプリによる連絡が頻繁に行われるが，返信時刻が不明な場合，行動判断が遅れ，不安や焦燥感が生じることがある．本研究は，日本語のテキストコミュニケーションにおいて，一定時間以内に返信があるか否かを機械学習で推定・分類し，有効な特徴量と学習手法を明らかにすることを目的とした．先行研究と同一の特徴量・手法で学習を行った結果，日本語テキストのみを用いた返信時間予測は一定の可能性を示したものの，実用的といえる水準には達しなかった．また，性能向上を目的に，追加検討を加えて学習を行ったが，顕著な性能向上は確認されなかった．これらの結果から，返信時間の予測にはテキスト情報だけでは不十分であり，利用者の状況や文脈といったテキスト外の要因が大きく影響している可能性が示唆された．",
+ ab:"https://utas.iwate-pu.org/published_abstracts/2025_0312022094",sl:"https://scrapbox.io/files/6ad8718ece9e6e5449abf6e7.pdf",pub:[]},
+{y:2025,th:"nudge",t:"衣服選択における着用回数の偏りを軽減するすごろく型コーディネート支援システムの提案",n:"藤村 優太",
+ s:"本研究は，日常的な衣服選択における「着用の偏り」の解消を目指し，すごろく型支援システムを提案した．登録した低頻度衣服の選択を疑似乱数で促す仕組みを構築し，実験参加者13名で2週間の提案システムを用いた実験を行った．結果，低頻度衣服の着用機会増加に一定の効果が見られたが，偏りを完全に解消するには不十分となった．個人の嗜好や乱数の偏りが課題であり，確実な提示に向けた設計改良が必要である．",
+ ab:"https://utas.iwate-pu.org/published_abstracts/2025_0312022139",sl:"https://scrapbox.io/files/6ad871c9ce9e6e5449abf77e.pdf",vd:"https://scrapbox.io/files/6ad871fece9e6e5449abf803.mp4",pub:[]},
+{y:2025,th:"mind",t:"エクスプレッシブ・ライティングに基づくWebアプリによる自己否定感軽減の検証",n:"三室 菜月",
+ s:"失敗や挫折といった否定的な経験は，自己否定感の高まりにつながる可能性がある．個人が日常生活の中で実践できる形での自己否定感の軽減に向けた支援については十分に検討されていない．本研究では，感情や思考を筆記によって整理する手法であるエクスプレッシブ・ライティングに着目し，個人での利用を前提としたWebアプリを構築した．また，探索的検討を行い，Webアプリを用いて感情や思考を整理することが自己否定感の軽減に繋がる可能性が示唆された．",
+ ab:"https://utas.iwate-pu.org/published_abstracts/2025_0312022150",sl:"https://scrapbox.io/files/6ad87271ce9e6e5449abf8ff.pdf",vd:"https://scrapbox.io/files/6ad8728bce9e6e5449abf935.mp4",
+ pub:[["三室 菜月, 小倉 加奈代：自己否定感軽減を目的としたエクスプレッシブ・ライティングに基づくWebアプリの構築と検討，情報処理学会インタラクション2026論文集, 1P-77, pp.457–460, 2026.","https://www.interaction-ipsj.org/proceedings/2026/data/pdf/1P77.pdf"]]},
+{y:2025,th:"sec",t:"SNS投稿時における被視感喚起刺激が誹謗中傷抑制に与える影響の検討",n:"渡邉 公平",
+ s:"本研究では，SNS上の誹謗中傷や攻撃的投稿の抑制を目的として，投稿画面に視覚的ナッジを提示する手法について検討した．模擬SNSを用いた実験を行い，目のアイコンやREC表示といった非言語的要素が，投稿時の再考行動や監視感覚に与える影響を分析した．その結果，視覚的ナッジが一部の利用者において投稿内容の見直しを促す可能性が示唆された．",
+ ab:"https://utas.iwate-pu.org/published_abstracts/2025_0312022160",sl:"https://scrapbox.io/files/6ad872e0ce9e6e5449abfa01.pdf",vd:"https://scrapbox.io/files/6ad872f5ce9e6e5449abfa2d.mp4",
+ pub:[["小倉 加奈代, 渡邉 公平：攻撃的文脈下のSNSコメント入力における被視感喚起刺激の影響の検討，情報処理学会研究報告ヒューマンコンピュータインタラクション（HCI）, 2026.",""]]},
+/* 2024 */
+{y:2024,th:"comm",t:"離れて暮らす祖父母と孫とのコミュニケーション促進に向けたスケジュール共有手法の検討",n:"荒木 梨穂",
+ s:"本研究では，コミュニケーションを取るためのハードルを下げるために，祖父母と孫それぞれの予定を把握可能，かつ，高齢者でも簡単に操作可能なコミュニケーション機会自動調整システムを構築し，構築システムにより，祖父母と孫とのコミュニケーションのハードルを下げることが可能かを検証した．実験の結果，構築システムにより，祖父母と孫のそれぞれの予定を把握することができ，コミュニケーションをとるきっかけに繋がる可能性があることを確認できた．しかし，構築システムにはUIデザイン面においていくつか課題があることもわかった．",
+ notes:["滝沢市の老人クラブ「いきいきサロン」3箇所で計18名にインタビューし，「連絡をとるタイミングがわからない」という課題を見出した","相互に予定を把握できるスケジュール調整ツールをLINE上に実装し，祖父母側4名・孫側4名に使ってもらいインタビュー調査を実施した"],
+ ab:"https://utas.iwate-pu.org/published_abstracts/2024_0312021003",sl:"https://scrapbox.io/files/6927d04311a45f7fe1901f9a.pdf",vd:"https://scrapbox.io/files/6927d03586ff6945df91f196.mov",pub:[]},
+{y:2024,th:"nudge",t:"BGMのテンポがスマホゲームのガチャを回す行動に及ぼす影響",n:"岩渕 園香",
+ s:"本研究では，BGMのテンポがゲームのガチャプレイ時の課金行動に及ぼす影響を検証した．その結果，速いテンポのBGMは時間を短く感じさせ，ポジティブな感情を引き出す一方，遅いテンポのBGMは時間を長く感じさせ，リラックスした感情を誘発することが確認された．これらの知見は，ユーザーの課金行動に影響を与える音環境の設計において有効な手がかりとなる可能性があり，ゲーム内における音楽の活用方法に新たな視点を提供するものである．",
+ ab:"https://utas.iwate-pu.org/published_abstracts/2024_0312021011",sl:"https://scrapbox.io/files/6927d07d2c9b2b0cad9c7f6a.pdf",vd:"https://scrapbox.io/files/6927d083759261e2d10970ac.mp4",
+ pub:[["小倉 加奈代, 岩渕 園香：スマートフォンゲームにおけるBGMテンポがガチャ課金行動に与える影響の検討，ヒューマンインタフェースシンポジウム2025論文集, 1T-P01, 2025.",""]]},
+{y:2024,th:"nudge",t:"防犯環境設計に着目した傘盗難防止システムの検討",n:"菅原 来",
+ s:"本研究では，傘の盗難を機会犯罪としてとらえ，防犯環境設計の視点から著者らが所属する大学内での傘の盗難を減少させることを目的としたシステムを構築する．構築するシステムは，人感センサーの検知に応じて，静止画と音声を組み合わせた傘を盗みづらい環境の構築を目的とするコンテンツの発信と，カメラによる監視を行う．具体的には，「傘を盗んでもいい」という誘惑を掻き立てていると考えられる置き傘・放置傘のリスクを呼びかけ，傘立ての利用者に傘を持ち帰ることを促す．さらに，カメラで傘立て付近の映像をリアルタイムで表示することにより，「誰かに見られている」という被視感を与えることの大きく2つの要素を取り入れることにより傘を盗みづらい環境を構築する．",
+ ab:"https://utas.iwate-pu.org/published_abstracts/2024_0312021079",sl:"https://scrapbox.io/files/6927d0f58371e011dba619a6.pdf",vd:"https://scrapbox.io/files/6927d0fb3e12bf13b5b91fc0.mp4",
+ pub:[["菅原 来, 小倉 加奈代：防犯環境設計を取り入れた傘盗難防止システムの検討，情報処理学会インタラクション2025論文集, 1P-76, pp.527–530, 2025.","https://www.interaction-ipsj.org/proceedings/2025/data/bib/1P-76.html"],
+      ["菅原 来, 小倉 加奈代：防犯環境設計と傘立て利用者の自制心に着目した傘盗難防止手法の検討，研究報告ヒューマンコンピュータインタラクション（HCI）, 2025-HCI-211(17), pp.1–8, 2025.","https://ipsj.ixsq.nii.ac.jp/records/241829"]]},
+/* 2023 */
+{y:2023,th:"nudge",t:"食品ロスに対する意識向上のためのセルフフィードバック可能な食品ロス記録システムの有効性の検証",n:"伊藤 優那",
+ s:"著者が実施した現状調査より，食品ロスに対する意識が高い人は食材の管理や消費，購入などを計画的に行うことができる傾向があるとわかった．本研究では，食品ロス削減のためには，食品ロスに対する意識を高めることが必要であるという考えのもと，食品ロスを記録するプロセスで発生する振り返りによるセルフフィードバックが可能なシステムを構築し，その有効性を実験により検証した．その結果，食品ロス削減に対する効果は確認できなかったものの，食品ロスに対する意識の変化がみられた．この結果を踏まえ，食品ロス記録システムに，他者の食品ロス量を共有する機能を追加し，その有効性を検証したところ，より効果があることが示された．",
+ ab:"https://utas.iwate-pu.org/published_abstracts/2023_0312020017",sl:"https://scrapbox.io/files/692e5e079bbe4aa2a582293e.pdf",vd:"https://scrapbox.io/files/692e5e00f79d79af6bc4ffff.mov",
+ pub:[["伊藤 優那, 小倉 加奈代：セルフフィードバックと競争情報フィードバックによる食品ロスに対する意識向上と食品ロス量削減に関する効果の検証，情報処理学会研究報告ヒューマンコンピュータインタラクション（HCI）, 2024-HCI-207(16), pp.1–8, 2024.","https://ipsj.ixsq.nii.ac.jp/records/232989"],
+      ["伊藤 優那, 小倉 加奈代：家庭系食品ロス削減に向けたセルフフィードバックを可能とする食品ロス記録システムの試作，情報処理学会研究報告ヒューマンコンピュータインタラクション（HCI）, 2024-HCI-206(35), pp.1–6, 2024.","https://ipsj.ixsq.nii.ac.jp/records/231636"]]},
+{y:2023,th:"pets",t:"Can I Pet Your Dog ? : すれちがい通信を利用した犬の飼い主と犬をなでたい人とのコミュニケーション活性化手法の提案",n:"菅野 緋菜",
+ s:"筆者にとって犬の散歩をしている人に犬を撫でても良いか尋ねることはとてもハードルが高い行為であり，コミュニケーション促進システムの導入によって犬を撫でさせてもらえないかと考えていた．そこで同じゲーム機を持っている人同士の情報を自動で交換し，交流を深めることができるサービスである「すれちがいMii広場」というシステムから着想を得て，自動的に犬の情報や飼い主の情報を共有し，声をかけるハードルを下げることでコミュニケーションの活性化を図るためのシステムを提案し，プロトタイプの作成を行った．さらに実験とインタビューを通してプロトタイプの評価を行い，本システムを用いて犬を触らせてもらえる可能性があるかを考察した．",
+ ab:"https://utas.iwate-pu.org/published_abstracts/2023_0312020049",sl:"https://scrapbox.io/files/692e5edaf01df765cfc38481.pdf",vd:"https://scrapbox.io/files/692e5edd98597291dfc62f97.mp4",
+ pub:[["菅野 緋菜, 小倉 加奈代：Can I Pet Your Dog?：すれちがい通信を利用した犬の飼い主と犬をなでたい人とのコミュニケーション活性化手法の提案，情報処理学会研究報告ヒューマンコンピュータインタラクション（HCI）, 2024-HCI-207(30), pp.1–5, 2024.","https://ipsj.ixsq.nii.ac.jp/records/233003"]]},
+{y:2023,th:"mind",t:"心理的・社会的ストレッサーに起因する出来事の振り返りによるストレス軽減効果の検証",n:"砂壁 賢次郎",
+ s:"本研究では，気軽にストレスを外在化する場として，心理的・社会的ストレッサーに起因する出来事を振り返るためのwebシステムを構築し，その利用によるストレス軽減効果と他人の振り返りを閲覧できる場合とできない場合でストレス効果に差があるか実験により検証した．その結果，構築したシステムの利用による効果には個人によって差があるということと，自分自身の投稿のみ閲覧可能な振り返りシステムの方がストレス軽減効果を見込める事を確認できた．",
+ ab:"https://utas.iwate-pu.org/published_abstracts/2023_0312020096",sl:"https://scrapbox.io/files/692e5f45507e05c7708383ad.pdf",vd:"https://scrapbox.io/files/692e5f48a52d87680f4ff09e.mov",pub:[]},
+{y:2023,th:"pets",t:"保護猫譲渡説明時に利用可能な適正飼育教材開発の試み",n:"高舘 愛美",
+ s:"本研究では，猫の飼育経験がない人を対象とし，インタビューでの具体的な要望をもとに，保護猫譲渡の際に使用する理解しやすい説明補助教材を開発した．具体的には，(1)現在の譲渡時説明資料をベースとしたショートムービー，(2)猫との生活で困ったときに見ることができるQ&Aサイト，(3)楽しみながら学習するためのクイズアプリ，(4)ミニゲームの4種類の教材である．各種教材作成後，学習者の注意を喚起し，学ばせたい物事への注意を向けさせる方略モデルであるARCSモデルを取り入れたチェックシートを用いて教材の評価を行い，その結果に基づいて教材を改善した．また，開発教材の学習効果を評価するための実験では，制作した教材を用いた学習と，書面の教材を用いた学習の比較実験を行い，結果として動画とクイズを用いた学習のほうがテストの点数が高かったことから，本研究での開発教材の学習効果に対する有効性が示された．",
+ partner:["NPO法人もりねこ","https://www.morineko.org/"],
+ ab:"https://utas.iwate-pu.org/published_abstracts/2023_0312020103",sl:"https://scrapbox.io/files/692e5ff2d82c85d279bd30bd.pdf",vd:"https://scrapbox.io/files/692e5feb821281e3e30c2f42.mp4",vdl:"ショートムービー",pub:[]},
+{y:2023,th:"nudge",t:"大学生の『収入ー貯蓄＝支出』の意識付けによる家計管理能力向上に対する効果の検証",n:"柾谷 堅人",
+ s:"本研究では，『収入－貯蓄＝支出』の定着のための支出記録システムを開発し，『収入－貯蓄＝支出』が定着するのか，また，定着によって家計管理能力が向上するのかどうかを検証した．『収入－貯蓄＝支出』の定着を促すための通知をするグループAでは4名中3名の意識得点が増加し，4名中1名が，実験後に理想を『収入－貯蓄＝支出』と回答した．すべての実験参加者にとって『収入－貯蓄＝支出』の定着を促す通知は，『収入－貯蓄＝支出』の定着と家計管理能力の向上に効果があるとはいえないが，少なくとも通知や家計簿記帳によって意識に変化が生じていたという結果になった．本実験では想定よりも少ない人数での実施になってしまったので，実験結果の検定，有意差を求めることはしなかった．実験期間に関しても，貯金や家計簿記帳において1ヶ月という期間はとても短いことから，今後の実験では実験実施人数・期間の見直しが必要である．",
+ ab:"https://utas.iwate-pu.org/published_abstracts/2023_0312020148",sl:"https://scrapbox.io/files/692e60137ec246d89e7d4f36.pdf",pub:[]},
+/* 2022 */
+{y:2022,th:"nudge",t:"おみくじの誘引性を利用したペットボトルリサイクル促進のためのラベル分別促進手法の提案",n:"伊瀬 友江",
+ s:"本研究では，ペットボトルのリサイクル促進における障壁の1つであるペットボトルラベルをはがす行動を習慣化させるために，おみくじの誘引性に着目したペットボトルラベル分別手法を提案する．提案手法は，ペットボトルラベル判定部とラベル判定およびおみくじ表示部の大きく2つにより構成されており，ユーザが実装システムにペットボトルを置くと，ペットボトルを撮影し，その撮影画像をもとにラベルの有無を判定し，ラベルがはがされていると判定される場合に，おみくじ抽選を行い，抽選結果により大吉から末吉までのいずれかを表示するというものである．ラベルの判定にはペットボトルの色彩を利用し，画像処理による検出を行う．作成したシステムはラベル分別の促進効果があることを観察調査とアンケート調査から確認した．10日間の実験では，分別率が高まり，分別意識が向上した．また，そのうち5日間の実装評価では，システムを利用することで分別を楽しく感じてもらえた．今後は長期間の運用において効果が続くのかさらなる検証を行う．",
+ sl:"https://scrapbox.io/files/692e60522828ae69e449c31c.pdf",vd:"https://scrapbox.io/files/692e6056d49e06509924222e.mp4",
+ pub:[["伊瀬 友江, 小倉 加奈代：おみくじの誘引性を利用したペットボトルリサイクル促進のためのラベル分別促進手法の提案，情報処理学会インタラクション2023論文集, 3A-04, pp.808–810, 2023.","https://www.interaction-ipsj.org/proceedings/2023/data/bib/3A-04.html"]]},
+{y:2022,th:"nudge",t:"YouTube依存防止に向けた自己制御能力向上手法の有効性の検証",n:"昆 太樹",
+ s:"本学ソフトウェア情報学部の学生を対象に，YouTubeの利用状況に関するアンケートを行ったところ，74%の学生がYouTubeの動画を視聴するために，睡眠や勉強などの時間を犠牲にしていることが分かった．依存的なYouTubeの視聴を防止するには，自己制御能力の向上が重要である．そこで本研究では，YouTubeの適切な利用の支援を目標とし，その前段階として5分前行動という自己制御を繰り返し行うトレーニングによって，自己制御能力が向上し，YouTubeの依存的な利用を防止することが可能かを検証した．その結果，5分前行動を行うことで自己制御能力は向上し，YouTubeの視聴時間は減少した．しかし，自己制御能力の向上により，YouTubeの視聴時間が減少したとは言えなかった．今後は，実験の参加者を増やし長期の実験を行うことで，実験の信頼性と妥当性を高め，5分前行動や自己制御のトレーニングの効果を改めて確かめる必要がある．",
+ sl:"https://scrapbox.io/files/692e61489bbe4aa2a5825895.pdf",pub:[]},
+{y:2022,th:"comm",t:"ビデオチャットを利用したグループワークにおけるカメラ映像表示の有効性の分析",n:"高橋 未来",
+ s:"本研究では，オンラインGWにおいて，カメラ機能のオン・オフが議論の進行にどのような影響を与えているのか模索するために，対面GW，カメラ機能ONオンラインGW，カメラ機能OFFオンラインGWの3つのGWの会話データを収録し，会話時の沈黙時間等，会話の円滑さに関わる会話傾向の違いからカメラ機能利用の有無による影響を検討した．結果として，仮説のほとんどは支持されなかったが，カメラ機能OFFオンラインGWでは議論が活発にならない可能性が示唆された．今後は，議論の発言内容や発言に対する反応回数に注目して分析を行い，より具体的な支援システムを検討していく．",
+ sl:"https://scrapbox.io/files/692e61702856dcccc1bb4939.pdf",
+ pub:[["高橋 未来, 小倉 加奈代：オンライングループワークにおけるカメラ映像表示の有無が議論進行に与える影響の分析，情報処理学会インタラクション2023論文集, 3P-67, pp.1060–1061, 2023.","https://www.interaction-ipsj.org/proceedings/2023/data/pdf/3P-67.pdf"]]},
+{y:2022,th:"sec",t:"オンライン上での誹謗中傷防止手法の検討",n:"千代原 維龍",
+ s:"本研究では，警告表示がある掲示板と警告表示がない掲示板の2つを利用した対照実験を行う．そこで掲示板上で警告表示を見たことにより「過去の投稿を削除する回数が増える」「入力欄上で書き直す回数が増える」という2つの仮説をもとに実際に再考するに至ったかを調査した．その結果，いずれの仮説も支持されなかった．今後は実験に用いるテーマ及び，警告表示する文を増やし，更に，実験の参加者を増やす必要がある．",
+ sl:"https://scrapbox.io/files/692e61ae57b2076bc9f8f246.pdf",pub:[]},
+{y:2022,th:"nudge",t:"情報活用と自己制御による浪費行動抑制のための要因調査",n:"藤原 拓巳",
+ s:"情報に一方的に流され金銭トラブルや浪費に巻き込まれるのではなく，正しい情報を見極め，必要な情報を取捨選択できる情報リテラシーを持つことが重要である．また個人の性格によって引き起こされる行動特性は，自身の内的要因によって行われていると考えられる．そこで本研究では，浪費行動を抑制することに貢献すると考えられる要因を明らかにするための調査を行った．調査の結果，情報活用能力の「処理力・創造力・判断力」は強迫性購買の「浪費性向・機能障害的浪費・購買後罪悪感」を抑制する因子が抽出された．今後は，実際に自己制御行動を起こさせるシステムや情報活用能力が上がるようなシステムの開発を検討していきたい．",
+ sl:"https://scrapbox.io/files/692e61ce717730159c93c967.pdf",pub:[]},
+{y:2022,th:"mind",t:"自己肯定感を高めるためのセルフリフレーミング日記帳システムの構築と有効性の検証",n:"木村 理恵",
+ s:"本研究では，自己肯定感を高めるために，物事を見る枠組みを変え，違う視点から捉えるリフレーミングというカウンセリング手法を自分自身で行うことができるセルフリフレーミング日記システムを構築し，セルフリフレーミングにより自己肯定感を向上できるのか，セルフリフレーミングと第三者がリフレーミングする場合とで，自己肯定感を向上度合いに差異があるのかを検討した．その結果，セルフリフレーミングの効果については，元々の自己肯定感が低いもしくは平均的なユーザ間で，効果の有無がわかれるが，自己肯定感が元々高いユーザは，セルフリフレーミングにより自己肯定感のさらなる向上が期待できることがわかった．セルフリフレーミングと第三者リフレーミングの比較については，後者の第三者によるリフレーミングの方が自己肯定感の向上に効果があることが確認できた．",
+ pub:[["木村 理恵, 小倉 加奈代：自己肯定感を高めるためのセルフリフレーミング日記帳システムの構築と有効性の検証，研究報告ヒューマンコンピュータインタラクション（HCI）, 2023-HCI-201(32), pp.1–8, 2023.","https://ipsj.ixsq.nii.ac.jp/records/223343"],
+      ["木村 理恵, 小倉 加奈代：自己肯定感向上を目的としたセルフリフレーミング日記システムの提案，情報処理学会インタラクション2023論文集, 1P-61, pp.389–391, 2023.","https://www.interaction-ipsj.org/proceedings/2023/data/pdf/1P-61.pdf"],
+      ["Kanayo Ogura, Rie Kimura: Improvement of the Feeling of Self-Affirmation by Using a Self-Reframing Diary System, Proc. of ACHI 2023.",""]]},
+/* 2021 */
+{y:2021,th:"comm",t:"HSP気質がテキストコミュニケーションにおける発言生成行動に及ぼす影響",n:"猪股 観蒼",
+ s:"本研究では，HSPの日常的なストレスを軽減するシステムの提案を行うことを目的とし，「HSP傾向の高い人は，発言をする際，頻繁に文章の推敲を行う」という仮説のもと，テキストチャットを用いたコミュニケーション場面でのHSP気質を持つ人の発言生成時の推敲回数特徴を調査した．その結果，HSP傾向高群の推敲回数は，1回目の実験の平均が30.6回，2回目の実験での平均は25回であった．また，HSP傾向低群の推敲回数は，1回目の実験の平均が40回，2回目の実験での平均は41.3回であり，1回目，2回目共にHSP傾向高群の平均を上回る結果となった．t検定を用いて仮説を検証した結果，有意差は確認されず，仮説は支持されなかった．今後は実験参加者数を増やし，会話相手との親密度や会話相手を複数人にする，もしくは会話相手を人間以外にしてさらなる検証を行う．",
+ sl:"https://scrapbox.io/files/692e629117f9d560c15c31d1.pdf",pub:[]},
+{y:2021,th:"sec",t:"フィッシング攻撃の脅威を訴える動画を取り入れた警告ダイアログによるセキュリティ意識向上への効果の検証",n:"及川 拓也",
+ s:"本研究では，セキュリティ意識の向上を目的とし，インターネット利用者にフィッシング攻撃の脅威に対する危険性を認識させ，現在訪れているサイトが安全なサイトかどうかの確認を促す内容の動画コンテンツを取り入れた警告ダイアログを実装した．不正サイトにおいて，重要情報であるパスワードの送信を許可した実験協力者は，作成した動画の視聴後，重要情報送信の許可/拒否を安全性の面から再考し，重要情報の送信を拒否するという仮説を立て，実験を行なった．その結果，不正サイトで重要情報送信を許可した実験協力者の約90%が，作成した動画の視聴後に表示される警告ダイアログにて，重要情報送信の拒否を行い，作成した動画によってフィッシング攻撃を回避させる効果があることが確認された．今後は，作成した動画がセキュリティ意識の向上に効果があるのかを実験を通して検証する．",
+ sl:"https://scrapbox.io/files/692e62ac809a394413e60a3a.pdf",vd:"https://scrapbox.io/files/692e62bd87a6da00c0ef492c.mp4",vdl:"実験用動画",
+ pub:[["及川 拓也, 小倉 加奈代：単純接触効果を狙ったショート動画警告によるセキュリティ意識向上の試み，ヒューマンインタフェースシンポジウム2022論文集, 2022.",""]]},
+{y:2021,th:"skill",t:"複数人における身体知形成サイクルの検証",n:"及川 博渡",
+ s:"身体知を形成するサイクルは，新しい着眼点を発見し，新旧着眼点相互の関係性を模索することで新たな身体知モデルを構築するプロセスの繰り返しであると言われている．本研究では，傘回しの「乱回し」という技の習得を目指し，その習得過程において前述のサイクルを確認できるかどうかを練習時に記録する言語記録を中心に分析し，検証した．分析の結果，2名ともにスランプ時に前述の身体知形成サイクルに対応する言語記録が確認された．",
+ sl:"https://scrapbox.io/files/6980415e35b9738fe8faa365.pdf",
+ pub:[["及川 博渡, 千代原 維龍, 小倉 加奈代：傘回しの身体知獲得過程における身体知形成サイクルの検証，2022年度日本認知科学会第39回大会予稿集, P2-051, 2022.","https://www.jcss.gr.jp/meetings/jcss2022/proceedings/pdf/JCSS2022_P2-051.pdf"]]},
+{y:2021,th:"nudge",t:"検温行動の習慣化における物理的及び心理的トリガを利用した仕掛けの有効性の検証",n:"北田 有希子",
+ s:"本研究では，日常生活行動の習慣化に有効な仕掛けを明らかにするために，検温行動を対象とし，物理的及び心理的トリガを利用した仕掛けを考案・設置し，その効果を検証する．仕掛けによって検温割合が増加する，物理的トリガに心理的トリガを組み合わせることで検温割合が増加すると仮説を立て，4つのケースを用いて実験をしたところ，ほとんどのケースで検温割合が減少した．減少の原因として，足跡マークは気づきの効果はあるが行動誘発までは至らないこと，4つのケースでは物理的および心理的トリガの組み合わせが少ないことが考えられるため，仕掛けの組み合わせを増やしてさらに検証するとともに，誘発力の高め方の検討などの仕掛けの改善を今後の課題とする．",
+ sl:"https://scrapbox.io/files/692e6359f01df765cfc3ba79.pdf",pub:[]},
+{y:2021,th:"skill",t:"農薬散布車の操作パネル改良に向けた操縦行動の分析と可視化の試み",n:"佐藤 楓",
+ s:"本研究では農薬散布車操縦時の映像データに対し，動画アノテーションソフトウェアELANを用いて，操縦行動のアノテーションを行い，分析した．農薬散布車の運転に加え，周囲の状況を判断しながら適切な散布位置を見極め，農薬散布をしており，全体として複雑な作業になっていることが明らかになった．さらに農薬散布作業を行う上で，結果としてわき見運転が発生しているという問題も見受けられた．一方で，左手が操縦にかかわらない時間があることも明らかになった．これらの結果は，操作パネル改良に向けての貢献が期待される．",
+ pub:[["小倉 加奈代, 湯木 正一, プリマ オキ ディッキ アルディアンシャー, 松田 浩一：農薬散布車の運転操作行動可視化の試み―操作性と安全性を両立する農機デザインの実現を目指して，情報処理学会研究報告ヒューマンコンピュータインタラクション（HCI）, 2022.",""]]},
+{y:2021,g:"修士",th:"skill",t:"XRコンテンツにおけるメニューデザインがジェスチャ操作とマルチタスクに及ぼす影響の調査",n:"芳賀 康太",
+ s:"従来のXRメニューはコントローラ操作に主眼を置いており，フリーハンドの状態での操作を考慮されていない場合が多い．また，従来のメニュー表示が画面内のオブジェクトの認識を阻害し，マルチタスク性が十分に確保できないなどの問題もしばしば見受けられる．そこで，本研究では著者が提案したXRメニューと従来のXRメニューを利用し，メニュー表示がジェスチャ操作やマルチタスクなどのXRコンテンツのユーザ体験に及ぼす影響についての実験を実施した．実験ではメニュー操作と同時に，オブジェクト認識と突発性シングルタスクに関する実験タスクを実験参加者に行ってもらい，XRメニューに関わる「UI配置・UIの大きさ・操作手法」の3つの要素について検証を実施した．結果として，縦のUI配置や大きいUIのマルチタスク性能の高さや指の方向を利用した操作の反応速度の高さが示され，3つの要素全てがマルチタスクに影響を及ぼすことが確認された．",
+ vd:"https://scrapbox.io/files/6930ebda81d8ed4c5669cb0f.mov",vdl:"実験操作説明動画",
+ pub:[["芳賀 康太, 小倉 加奈代：XRコンテンツにおけるメニュー表示がマルチタスクに及ぼす影響，研究報告ヒューマンコンピュータインタラクション（HCI）, 2022-HCI-197(47), pp.1–8, 2022.","https://ipsj.ixsq.nii.ac.jp/records/217466"],
+      ["芳賀 康太, 小倉 加奈代：指の方向に着目した片手操作用仮想メニューの視認性評価，研究報告ヒューマンコンピュータインタラクション（HCI）, 2021-HCI-194(3), pp.1–7, 2021.","https://ipsj.ixsq.nii.ac.jp/records/212280"]]},
+{y:2021,g:"修士",th:"comm",t:"大規模組織内におけるコミュニティ形成を促進する情報共有メディアに関する研究",n:"星 亮太朗",
+ s:"組織内には，自身が抱える疑問をすでに解決した人が多く存在する．しかし，情報共有や疑問の解決は親しい間柄で行われることが多く，部署や研究室などの枠を超えて活発に情報共有が行われているわけではない．本研究では従来の環境とは異なる情報共有の場として，大規模な組織内における情報共有を支援する電子掲示板を開発する．予備調査では，ホワイトボードによる物理的な掲示板を用意して実際の書き込みや閲覧行動を観察し，話題の区切りを明確にして投稿と返信を規則的に配置すること，話題の継続状況を考慮して動的に掲載時間を変化する必要があることがわかった．予備調査を踏まえて開発した電子掲示板を本学に設置し，利用状況と掲示板上における利用者の振る舞いを確認した．その結果，特定の利用者に偏ることなく日常的に利用されていることがわかった．",
+ notes:["学内の複数箇所にホワイトボードを設置して観察し，その結果をもとに電子掲示板を大学生協前のパブリックスペースに数ヶ月間設置して評価した","ACHI 2023 Best Paper Award（Kanayo Ogura, Ryotaro Hoshi）"],
+ sl:"https://scrapbox.io/files/692e6414f01df765cfc3c247.pdf",sll:"公聴会資料",
+ pub:[["星 亮太朗, 小倉 加奈代：表示形式と時間経過に着目した情報共有を支援する電子掲示板の開発と観察，研究報告ヒューマンコンピュータインタラクション（HCI）, 2022-HCI-197(32), pp.1–8, 2022.","https://ipsj.ixsq.nii.ac.jp/records/217451"],
+      ["星 亮太朗, 小倉 加奈代：大規模組織内における伝言板上の情報共有行動に基づいた情報共有メディアの検討，研究報告ヒューマンコンピュータインタラクション（HCI）, 2021-HCI-195(14), pp.1–8, 2021.","https://ipsj.ixsq.nii.ac.jp/records/213971"]]},
+/* 2020 */
+{y:2020,th:"mind",t:"友人との日記共有による感謝行動の継続性に関する研究",n:"下斗米 孝文",
+ s:"感謝日記とは，日々の感謝した出来事を日記形式で記述するものである．感謝日記をつけることは，日本や欧米で幸福感を増加させる効果があることが示されているが，その継続支援に関しては十分な効果を得られていない．本研究では，友人との日記共有により継続性のある感謝行動を身につけることを目的とした感謝日記を実装し，幸福感向上や他者への感謝の点で効果があるかを検証する．",
+ sl:"https://scrapbox.io/files/6930e4630cea9696c9d6dd27.pdf",pub:[]},
+{y:2020,th:"comm",t:"参加者の積極性と親密度に左右されない対面型グループディスカッション支援手法の提案",n:"及川 瑞紀",
+ s:"近年，教育機関ではアクティブラーニングの導入が進行しており，特に有効な手法としてグループディスカッションがあげられる．しかし，グループディスカッションへの参加は誰しも肯定的ではなく，先行研究においてもメンバー同士の親密度の観点からの研究は筆者の知る限りされていない．本研究では，既存のアクティブラーニング支援技術「クリッカー」にリアルタイム性を持たせたシステムを提案し，その有用性を検証した．",
+ sl:"https://scrapbox.io/files/6930e4d7c9707a66cef13529.pdf",
+ pub:[["及川 瑞紀, 小倉 加奈代：参加者の積極性と親密度に左右されない対面型グループディスカッション支援手法の提案，情報処理学会インタラクション2021論文集, 3A-04, pp.451–456, 2021.","https://www.interaction-ipsj.org/proceedings/2021/data/bib/3A04.html"]]},
+{y:2020,th:"skill",t:"日常生活中のストレス状態と心拍変動との関係性の検証",n:"久保 優希",
+ s:"現代社会で深刻化しているストレス問題の解決策の一つとして，ストレスの可視化・提示が挙げられる．その前段階として，心拍変動を用いたストレス評価法に着目し，日常生活におけるストレスモニタリングを実施することで，心拍変動から算出されるストレス値LF/HFと主観的なストレス状況や日常行動との関係性を調査した．その結果，LF/HFとユーザの状態や日常生活中に感じているストレスとの関連が示唆された．",
+ sl:"https://scrapbox.io/files/6930e4f4fdc75df05246fecc.pdf",
+ pub:[["久保 優希, 小倉 加奈代：心拍変動を利用した日常生活下のストレス値測定手法の検証，情報処理学会インタラクション2021論文集, 1P-07, pp.611–614, 2021.","https://www.interaction-ipsj.org/proceedings/2021/data/bib/1P07.html"]]},
+{y:2020,th:"mind",t:"自己肯定感を向上させる「褒める」行為に着目したSNSの提案",n:"村尾 侑哉",
+ s:"近年，日本人の自己肯定感の低下が問題となっている．自己肯定感が低いと希望をもって行動しづらい傾向があるため，向上させる必要がある．そこで，自己肯定感を向上させる褒め合うSNSを提案する．SNSにて自分への褒め言葉を見えないようにすることで「あの人がこのような褒め言葉を言っていた」といったクチコミを誘発させる．実験の前後に自己肯定感の測定を行ったところ，実験後に自己肯定感が向上することが確認できた．",
+ sl:"https://scrapbox.io/files/6930e54c95eb910310280916.pdf",
+ pub:[["村尾 侑哉, 小倉 加奈代：自己肯定感を向上させる「褒める」行為に着目したSNSの提案，情報処理学会インタラクション2021論文集, 2B-07, pp.372–377, 2021.","https://www.interaction-ipsj.org/proceedings/2021/data/bib/2B07.html"]]},
+{y:2020,th:"skill",t:"傘回しの一人称研究から生まれる身体知獲得過程の分析",n:"渡邉 樹生",
+ s:"スポーツや運動において身体知は必要不可欠なものであり，その獲得手法は多様化している．言語化行為はその手法の一つとされ，数多くのスポーツで研究が行われてきた．言語化行為における主観的意識の変化は身体知獲得の変遷に大きく関係があると考えられ，本研究では傘回しの身体知を獲得した際の言語化行為を言語化内容に深く追求し，主観的意識の変遷が身体知獲得過程の変遷との相関が生まれるかを調査した．",
+ sl:"https://scrapbox.io/files/6930e5a0d6b18cdc68d917d2.pdf",
+ pub:[["渡邉 樹生, 小倉 加奈代：傘回しの一人称研究による身体知獲得過程の分析，2021年度日本認知科学会第38回大会論文集, P2-32, pp.578–583, 2021.","https://www.jcss.gr.jp/meetings/jcss2021/proceedings/keyword364.html"]]},
+{y:2020,th:"skill",t:"ハンドトラッキングを利用した仮想空間内のメニュー手法に関する研究",n:"吉見 祐",
+ s:"本研究ではコントローラを使用しない，ハンドトラッキング操作に適したメニューを開発することを目的とし，既存の手法をVR内でハンドトラッキングを用いて使用した場合について選択方法3通り，配置方法4通りの全12通りのメニューを比較した．それぞれの手法はユーザの使いやすさ以外にも，表示できる選択肢の個数，種類，画面のサイズ等の特徴の違いが想定される．",
+ sl:"https://scrapbox.io/files/6930e574d39b9ce17bd97ddb.pdf",pub:[]}
+];
+
+const TEAMS = [
+{y:2026,th:"skill",t:"Brain Canvas：脳血流の変化から生まれる活動振り返りアート",n:"五十嵐 湖香，小笠原 明音，桑畑 一護，佐藤 真緒，鈴木 日和子，小野寺 槻陽",
+ sl:"https://scrapbox.io/files/6ad8747ece9e6e5449abfe50.pdf",pub:"ヒューマンインタフェースシンポジウム2026予稿集, pp.1565–1569, 2026."},
+{y:2025,th:"skill",t:"BITalinoを活用した脳波センシングによる自然な目覚めのための起床支援システムの提案",n:"菅原 心優，島田 健吾，橋口 空",
+ sl:"https://scrapbox.io/files/6930e218c76cfd798ca2ef18.pdf",pub:"ヒューマンインタフェースシンポジウム2025論文集, 1S-10, 2025."},
+{y:2025,th:"skill",t:"BITalinoを活用した筋電センサによる直感的ゲーム操作インタフェースの提案",n:"佐竹 愁人，吉田 久遠，飯岡 幸恵",
+ sl:"https://drive.google.com/file/d/10DDL2cTp8R83ZMllacQ8P1nBLhT-vAON/view?usp=sharing",pub:"ヒューマンインタフェースシンポジウム2025論文集, 1S-15, 2025."}
+];
+
+
+const THEMES={
+  nudge:{s:"行動変容デザイン",n:"行動経済学を活かした行動変容デザイン",ex:["安全確認","休憩","先延ばし","咀嚼","ゴミ分別","食品ロス"]},
+  skill:{s:"行動分析・技能習得",n:"人の状態・行動の分析と技能習得支援",ex:["身体動作の分析","操作行動の分析","楽器・スポーツの技能支援"]},
+  comm:{s:"コミュニケーション",n:"人と人とのコミュニケーションを支えるデザイン",ex:["オンラインコミュニケーション","感情・情報共有","組織・コミュニティの交流"]},
+  pets:{s:"人と犬・猫",n:"人と犬・猫とのよりよい関係を支えるデザイン",ex:["犬の散歩時の交流","保護猫の適正飼育・譲渡"]},
+  mind:{s:"こころの支援"},sec:{s:"セキュリティ心理学"}
+};
+const MAIN=["nudge","skill","comm","pets"],ALL=[...MAIN,"mind","sec"];
+const tv=k=>`--tc:var(--t-${k});--tbg:var(--t-${k}-bg)`;
+const esc=s=>String(s).replace(/[&<>"]/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[ch]));
+const $=id=>document.getElementById(id);
+const ic=k=>`<svg class="ic" aria-hidden="true"><use href="#i-${k==='pets'?'cat':k}"/></svg>`;
+const cnt=k=>STUDIES.filter(s=>s.th===k).length;
+const link=(u,l)=>u?`<a href="${esc(u)}" target="_blank" rel="noopener">${l}<span class="vh">（新しいタブで開きます）</span></a><svg class="ext" aria-hidden="true"><use href="#i-ext"/></svg>`:"";
+const linkW=(u,l)=>u?`<span>${link(u,l)}</span>`:"";
+$("rmlink").innerHTML=link("https://researchmap.jp/read0144643","researchmap");
+
+const ug=STUDIES.filter(s=>!s.g).length;
+$("nums").innerHTML=[[ug,"学部卒業生"],[STUDIES.length-ug,"修士修了生"],[STUDIES.reduce((n,s)=>n+s.pub.length,0)+TEAMS.length,"学会等での発表"]]
+  .map(([b,s])=>`<li><b>${b}</b><span>${s}</span></li>`).join("");
+$("tiles").innerHTML=MAIN.map(k=>`<button type="button" class="tile" style="${tv(k)}" data-goto="${k}">${ic(k)}<span><b>${THEMES[k].s}</b><span>先輩の研究 ${cnt(k)}件</span></span></button>`).join("");
+$("tgrid").innerHTML=MAIN.map(k=>`<div class="tcard" style="${tv(k)}"><div class="hd">${ic(k)}<h3>${THEMES[k].n}</h3></div>
+  <ul class="chips">${THEMES[k].ex.map(e=>`<li>${e}</li>`).join("")}</ul>
+  <button type="button" class="btn btn-outline" data-goto="${k}">先輩の研究を見る（${cnt(k)}件）</button></div>`).join("");
+
+const st={th:"all",y:"all",n:9};
+const years=[...new Set(STUDIES.map(s=>s.y))].sort((a,b)=>b-a);
+const tick='<svg class="ic chk" aria-hidden="true" viewBox="0 0 24 24"><use href="#i-tick"/></svg>';
+function bar(){
+  $("bar").innerHTML=["all",...ALL].map(k=>`<button type="button" class="toggle" data-th="${k}" aria-pressed="${st.th===k}">${tick}${k==="all"?"すべて":`<span class="dot" style="${tv(k)}"></span>${THEMES[k].s}`}</button>`).join("")
+   +`<span class="sel"><label for="ysel">年度</label><select id="ysel">${["all",...years].map(y=>`<option value="${y}" ${st.y==String(y)?"selected":""}>${y==="all"?"すべて":y+"年度"}</option>`).join("")}</select></span>`;
+  $("ysel").addEventListener("change",e=>{st.y=e.target.value;st.n=9;render();$("ysel").focus();});
+}
+let list=[];
+function render(){
+  bar();
+  list=STUDIES.filter(s=>(st.th==="all"||s.th===st.th)&&(st.y==="all"||String(s.y)===st.y));
+  $("cards").innerHTML=list.slice(0,st.n).map((s,i)=>`<button type="button" class="card" style="${tv(s.th)}" data-i="${i}" aria-haspopup="dialog">
+    <span class="meta"><span class="y">${s.y}年度${s.g?"・修士":""}</span><span class="tag">${THEMES[s.th].s}</span></span>
+    <span class="ttl">${esc(s.t)}</span><span class="nm">${esc(s.n)}</span></button>`).join("")
+    || `<p>条件に合う研究はありません．テーマか年度を変えてください．</p>`;
+  $("morewrap").innerHTML=list.length>st.n?`<button type="button" class="btn btn-outline paw-btn" id="more"><svg aria-hidden="true"><use href="#i-paw"/></svg>もっと見る（残り${list.length-st.n}件）</button>`:"";
+}
+let opener=null;
+function openDlg(s,btn){
+  opener=btn; const d=$("dlg");
+  d.innerHTML=`<div class="dlg" style="${tv(s.th)}">
+    <div class="bar-top"><span class="tag">${THEMES[s.th].s}</span><button type="button" class="btn btn-outline close" id="x">閉じる</button></div>
+    <span class="sub">${s.y}年度 ${s.g?"修士研究":"卒業研究"}　${esc(s.n)}</span>
+    <h3 id="dlgTitle">${esc(s.t)}</h3>
+    <p>${esc(s.s)}</p>
+    ${s.notes?`<ul>${s.notes.map(n=>`<li>${esc(n)}</li>`).join("")}</ul>`:""}
+    <div class="links">${linkW(s.ab,"卒業論文要旨")}${linkW(s.sl,s.sll||"発表資料")}${linkW(s.vd,s.vdl||"システム説明動画")}${s.partner?linkW(s.partner[1],"協力："+s.partner[0]):""}</div>
+    ${s.pub.length?`<div class="pubs"><h4>学会等での発表</h4>${s.pub.map(([t,u])=>`<p>${esc(t)}${u?" "+link(u,"論文"):""}</p>`).join("")}</div>`:""}</div>`;
+  $("x").addEventListener("click",()=>d.close());
+  if(d.showModal) d.showModal(); else d.setAttribute("open","");
+}
+$("dlg").addEventListener("close",()=>{opener&&opener.focus();});
+$("dlg").addEventListener("click",e=>{if(e.target===e.currentTarget)e.currentTarget.close();});
+document.addEventListener("click",e=>{
+  const g=e.target.closest("[data-goto]");
+  if(g){st.th=g.dataset.goto;st.y="all";st.n=9;render();$("archive").scrollIntoView();return;}
+  const t=e.target.closest("#bar [data-th]");
+  if(t){st.th=t.dataset.th;st.n=9;render();document.querySelector(`#bar [data-th="${st.th}"]`).focus();return;}
+  const cd=e.target.closest(".card[data-i]");
+  if(cd){openDlg(list[+cd.dataset.i],cd);return;}
+  if(e.target.closest("#more")){const from=st.n;st.n+=9;render();const nx=document.querySelector(`.card[data-i="${from}"]`);nx&&nx.focus();}
+});
+render();
+
+$("tteam").innerHTML=TEAMS.map(t=>`<div class="tt"><span class="y">${t.y}年度</span><b>${esc(t.t)}</b><span class="v">${esc(t.pub)}</span><span>${link(t.sl,"発表資料")}</span></div>`).join("");
+
+$("career").innerHTML=[["就職",22],["大学院進学",2],["その他",3]].map(([l,v])=>`<li><span>${l}</span><span class="track" aria-hidden="true"><span class="fill" style="width:${v/27*100}%"></span></span><span class="v">${v}名</span></li>`).join("");
+
+$("copy").addEventListener("click",()=>{
+  const a=$("addr").textContent,m=$("copyMsg");
+  const sel=()=>{const r=document.createRange();r.selectNodeContents($("addr"));const s=getSelection();s.removeAllRanges();s.addRange(r);m.textContent="アドレスを選択しました．コピーして使ってください．";};
+  try{navigator.clipboard.writeText(a).then(()=>m.textContent="コピーしました．",sel);}catch(err){sel();}
+});
+</script>
+
+</body>
+</html>
